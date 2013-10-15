@@ -1,11 +1,13 @@
 Hardware Features
 =================
  - Xilinx Kirtex-7 XC7K325T FFG900 -3
- - Four SFP+ interface (using 4 GTX transeivers)
- - Supports both 10Gps and 1Gps modes
+ - 4x SFP+ interface (using 4 GTX transeivers)
+   - Supports both 10Gps and 1Gps modes
  - x8 PCI Express Gen3
  - Two x36 QDR II (CY7C1515KV18)
  - DDR3 SODIMM
+ - RJ45 interface
+ - x4 3/6Gps SAS/SATA
 
 DDR3
 =====
