@@ -1,27 +1,29 @@
 Hardware Features
 =================
- - Xilinx Kirtex-7 XC7K325T FFG900 -3
+ - Xilinx Kirtex-7 XC7K325T-2FFG900I 
  - 4x SFP+ interface (using 4 GTX transeivers)
    - Supports both 10Gps and 1Gps modes
- - x8 PCI Express Gen3
+ - x8 PCI Express Gen1/2/3
  - Two x36 QDR II (CY7C1515KV18)
  - DDR3 SODIMM
  - RJ45 interface
- - x4 3/6Gps SAS/SATA
+ - 3/6Gps SAS/SATA (using 4 GTX transeivers)
+ - ATX Power Connector
+ - USB Mini RS232 (FT232R)
 
 DDR3
-=====
+====
   - Bank 32: DQ[32-63]
   - Bank 33: Address/ctrl
   - Bank 34: DQ[0-31]
 
-QDR II 0 
-========
+QDR II #0
+=========
    - Bank 16: D[0-35]
    - Bank 17: Address/ctrl
    - Bank 18: Q[0-35]
 
-QDR II 1 
+QDR II #1 
 ========
     - Bank 12: D[0-35]
     - Bank 13: Address/ctrl
