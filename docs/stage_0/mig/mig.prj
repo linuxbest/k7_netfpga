@@ -47,7 +47,7 @@
             <Bank T2="DQ[16-23]" T3="DQ[24-31]" name="34" T0="DQ[0-7]" T1="DQ[8-15]" />
         </BankSelection>
         <Reference_Clock>
-            <Pin PADName="AE23/AF23(CC_P/N)" Bank="12" name="clk_ref_p/n" />
+            <Pin PADName="L25/K25(CC_P/N)" Bank="15" name="clk_ref_p/n" />
         </Reference_Clock>
         <System_Clock>
             <Pin PADName="AE10/AF10(CC_P/N)" Bank="33" name="c0_sys_clk_p/n" />
@@ -105,7 +105,7 @@
             <Bank T2="Q[18-26]" T3="Q[27-35]" name="18" T0="Q[0-8]" T1="Q[9-17]" />
         </BankSelection>
         <System_Clock>
-            <Pin PADName="E19/D19(CC_P/N)" Bank="17" name="c1_sys_clk_p/n" />
+            <Pin PADName="D17/D18(CC_P/N)" Bank="17" name="c1_sys_clk_p/n" />
         </System_Clock>
         <TimingParameters>
             <Parameters/>
@@ -132,10 +132,10 @@
         <BankSelection>
             <Bank T2="Q[18-26]" T3="Q[27-35]" name="12" T0="Q[0-8]" T1="Q[9-17]" />
             <Bank T2="D[18-26]" T3="D[27-35]" name="13" T0="D[0-8]" T1="D[9-17]" />
-            <Bank T2="Address/Ctrl-0" T3="Address/Ctrl-1" name="14" />
+            <Bank T2="Address/Ctrl-0" T3="Address/Ctrl-1" name="15" />
         </BankSelection>
         <System_Clock>
-            <Pin PADName="AG24/AH24(CC_P/N)" Bank="12" name="c2_sys_clk_p/n" />
+            <Pin PADName="L25/K25(CC_P/N)" Bank="15" name="c2_sys_clk_p/n" />
         </System_Clock>
         <TimingParameters>
             <Parameters/>
