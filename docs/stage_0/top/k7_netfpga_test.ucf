@@ -730,7 +730,8 @@ TIMESPEC "TS_X0Y15_TXOUTCLK" = PERIOD "TNM_X0Y15_TXOUTCLK" 13.333 ns;
 #-------------------------------------------------------------------------------------
 # System Clock Timing Constraints and PIN LOCs (if applicable) 
 #-------------------------------------------------------------------------------------
-NET "IBERT_SYSCLOCK_P_IPAD" IOSTANDARD = LVCMOS25;
+#NET "IBERT_SYSCLOCK_P_IPAD" LOC = "L26" | IOSTANDARD = SSTL15;
+
 # Warning: System clock "IBERT_SYSCLOCK_P_IPAD" location is unassigned see pad report for actual pin location
 NET "*/U_CHIPSCOPE_IBERT/U0/U_IBERT_CORE/ma_dclk" PERIOD = 100.0 MHz;
 
