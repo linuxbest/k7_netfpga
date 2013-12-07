@@ -1,7 +1,7 @@
 ##############################################################
 #
-# Xilinx Core Generator version 14.6
-# Date: Fri Nov 15 20:26:47 2013
+# Xilinx Core Generator version 12.4
+# Date: Fri Sep 17 12:31:49 2010
 #
 ##############################################################
 #
@@ -9,10 +9,6 @@
 #  Xilinx CORE Generator IP GUI. It is strongly recommended
 #  that you do not manually alter this file as it may cause
 #  unexpected and unsupported behavior.
-#
-##############################################################
-#
-#  Generated from component: xilinx.com:ip:mig_7series:1.9
 #
 ##############################################################
 #
@@ -30,20 +26,25 @@ SET foundationsym = false
 SET implementationfiletype = Ngc
 SET package = ffg900
 SET removerpms = false
-SET simulationfiles = Behavioral
+SET simulationfiles = Structural
 SET speedgrade = -3
 SET verilogsim = true
 SET vhdlsim = false
 # END Project Options
 # BEGIN Select
-SELECT MIG_7_Series family Xilinx,_Inc. 1.9
+SELECT ICON_(ChipScope_Pro_-_Integrated_Controller) family Xilinx,_Inc. 1.06.a
 # END Select
 # BEGIN Parameters
-CSET component_name=mig_7series_v1_9
-CSET xml_input_file=./mig.prj
+CSET component_name=icon_kintex7
+CSET constraint_type=embedded
+CSET enable_jtag_bufg=true
+CSET example_design=false
+CSET number_control_ports=1
+CSET use_ext_bscan=false
+CSET use_softbscan=false
+CSET use_unused_bscan=false
+CSET user_scan_chain=USER1
 # END Parameters
-# BEGIN Extra information
-MISC pkg_timestamp=2013-06-08T23:00:50Z
-# END Extra information
 GENERATE
-# CRC:  f90ed18
+# CRC: b8c72b54
+
