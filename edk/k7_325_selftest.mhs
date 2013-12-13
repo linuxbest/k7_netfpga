@@ -10,8 +10,25 @@
 # ##############################################################################
  PARAMETER VERSION = 2.1.0
 
+# System Clock & Reset
+ PORT CLK_100MHz = CLK_100MHz, DIR = I, SIGIS = CLK, CLK_FREQ = 100000000
+ PORT RESET = RESET, DIR = I, SIGIS = RST, RST_POLARITY = 0
+ PORT RS232_Uart_1_sout = RS232_Uart_1_sout, DIR = O
+ PORT RS232_Uart_1_sin = RS232_Uart_1_sin, DIR = I
 
- PORT sm_fan_pwm_net_vcc = net_vcc, DIR = O
+# 100Mhz ethernet 
+ PORT mii_to_rmii_0_Phy2Rmii_crs_dv_pin = mii_to_rmii_0_Phy2Rmii_crs_dv, DIR = I
+ PORT mii_to_rmii_0_Phy2Rmii_rx_er_pin = mii_to_rmii_0_Phy2Rmii_rx_er, DIR = I
+ PORT mii_to_rmii_0_Phy2Rmii_rxd_pin = mii_to_rmii_0_Phy2Rmii_rxd, DIR = I, VEC = [1:0]
+ PORT mii_to_rmii_0_Rmii2Phy_txd_pin = mii_to_rmii_0_Rmii2Phy_txd, DIR = O, VEC = [1:0]
+ PORT mii_to_rmii_0_Rmii2Phy_tx_en_pin = mii_to_rmii_0_Rmii2Phy_tx_en, DIR = O
+ PORT xps_ethernetlite_0_50_O_pin = clk_50_0000MHzPLLE0, DIR = O, SIGIS = CLK
+ PORT xps_ethernetlite_0_50_I_pin = clk_50_0000MHz, DIR = I, SIGIS = CLK
+ PORT xps_ethernetlite_0_PHY_rst_n_pin = xps_ethernetlite_0_PHY_rst_n, DIR = O
+# PORT xps_ethernetlite_0_PHY_MDC_pin = xps_ethernetlite_0_PHY_MDC, DIR = O
+# PORT xps_ethernetlite_0_PHY_MDIO_pin = xps_ethernetlite_0_PHY_MDIO, DIR = IO
+
+# DDR3 
  PORT ddr_memory_we_n = ddr_memory_we_n, DIR = O
  PORT ddr_memory_ras_n = ddr_memory_ras_n, DIR = O
  PORT ddr_memory_odt = ddr_memory_odt, DIR = O
@@ -27,39 +44,27 @@
  PORT ddr_memory_cas_n = ddr_memory_cas_n, DIR = O
  PORT ddr_memory_ba = ddr_memory_ba, DIR = O, VEC = [2:0]
  PORT ddr_memory_addr = ddr_memory_addr, DIR = O, VEC = [13:0]
- PORT RS232_Uart_1_sout = RS232_Uart_1_sout, DIR = O
- PORT RS232_Uart_1_sin = RS232_Uart_1_sin, DIR = I
- PORT RESET = RESET, DIR = I, SIGIS = RST, RST_POLARITY = 1
- PORT PCI_Express_pci_exp_txp = PCI_Express_pci_exp_txp, DIR = O, VEC = [1:0]
- PORT PCI_Express_pci_exp_txn = PCI_Express_pci_exp_txn, DIR = O, VEC = [1:0]
- PORT PCI_Express_pci_exp_rxp = PCI_Express_pci_exp_rxp, DIR = I, VEC = [1:0]
- PORT PCI_Express_pci_exp_rxn = PCI_Express_pci_exp_rxn, DIR = I, VEC = [1:0]
+
+# PCI Express
+ PORT PCI_Express_pci_exp_txp = PCI_Express_pci_exp_txp, DIR = O, VEC = [7:0]
+ PORT PCI_Express_pci_exp_txn = PCI_Express_pci_exp_txn, DIR = O, VEC = [7:0]
+ PORT PCI_Express_pci_exp_rxp = PCI_Express_pci_exp_rxp, DIR = I, VEC = [7:0]
+ PORT PCI_Express_pci_exp_rxn = PCI_Express_pci_exp_rxn, DIR = I, VEC = [7:0]
+ PORT PCIe_Diff_Clk_P = PCIe_Diff_Clk_P, DIR = I, CLK_FREQ = 100000000
+ PORT PCIe_Diff_Clk_N = PCIe_Diff_Clk_N, DIR = I, CLK_FREQ = 100000000
+ PORT PCIe_perstn = PCIe_perstn, DIR = I, SIGIS = RST
+
+# Flash
  PORT Linear_Flash_we_n = Linear_Flash_we_n, DIR = O
  PORT Linear_Flash_oe_n = Linear_Flash_oe_n, DIR = O
  PORT Linear_Flash_data = Linear_Flash_data, DIR = IO, VEC = [0:15]
  PORT Linear_Flash_ce_n = Linear_Flash_ce_n, DIR = O
  PORT Linear_Flash_adv_ldn = Linear_Flash_adv_ldn, DIR = O
  PORT Linear_Flash_address = Linear_Flash_address, DIR = O, VEC = [0:25]
+ 
+ PORT sm_fan_pwm_net_vcc = net_vcc, DIR = O
  PORT IIC_MAIN_SDA = IIC_MAIN_SDA, DIR = IO
  PORT IIC_MAIN_SCL = IIC_MAIN_SCL, DIR = IO
- PORT Ethernet_Lite_TX_EN = Ethernet_Lite_TX_EN, DIR = O
- PORT Ethernet_Lite_TX_CLK = Ethernet_Lite_TX_CLK, DIR = I
- PORT Ethernet_Lite_TXD = Ethernet_Lite_TXD, DIR = O, VEC = [3:0]
- PORT Ethernet_Lite_RX_ER = Ethernet_Lite_RX_ER, DIR = I
- PORT Ethernet_Lite_RX_DV = Ethernet_Lite_RX_DV, DIR = I
- PORT Ethernet_Lite_RX_CLK = Ethernet_Lite_RX_CLK, DIR = I
- PORT Ethernet_Lite_RXD = Ethernet_Lite_RXD, DIR = I, VEC = [3:0]
- PORT Ethernet_Lite_PHY_RST_N = Ethernet_Lite_PHY_RST_N, DIR = O
- PORT Ethernet_Lite_MDIO = Ethernet_Lite_MDIO, DIR = IO
- PORT Ethernet_Lite_MDC = Ethernet_Lite_MDC, DIR = O
- PORT Ethernet_Lite_CRS = Ethernet_Lite_CRS, DIR = I
- PORT Ethernet_Lite_COL = Ethernet_Lite_COL, DIR = I
- PORT CLK_P = CLK, DIR = I, DIFFERENTIAL_POLARITY = P, SIGIS = CLK, CLK_FREQ = 200000000
- PORT CLK_N = CLK, DIR = I, DIFFERENTIAL_POLARITY = N, SIGIS = CLK, CLK_FREQ = 200000000
- PORT PCIe_Diff_Clk_P = PCIe_Diff_Clk_P, DIR = I, CLK_FREQ = 100000000
- PORT PCIe_Diff_Clk_N = PCIe_Diff_Clk_N, DIR = I, CLK_FREQ = 100000000
- PORT PCIe_perstn = PCIe_perstn, DIR = I, SIGIS = RST
-
 
 BEGIN util_vector_logic
  PARAMETER INSTANCE = util_and_logic_0
@@ -73,7 +78,7 @@ END
 BEGIN proc_sys_reset
  PARAMETER INSTANCE = proc_sys_reset_0
  PARAMETER HW_VER = 3.00.a
- PARAMETER C_EXT_RESET_HIGH = 1
+ PARAMETER C_EXT_RESET_HIGH = 0
  PARAMETER C_AUX_RESET_HIGH = 0
  PORT MB_Debug_Sys_Rst = proc_sys_reset_0_MB_Debug_Sys_Rst
  PORT Dcm_locked = proc_sys_reset_0_Dcm_locked
@@ -185,6 +190,9 @@ BEGIN clock_generator
  PARAMETER C_CLKOUT3_GROUP = PLLE0
  PARAMETER C_CLKOUT4_FREQ = 200000000
  PARAMETER C_CLKOUT4_GROUP = PLLE0
+ PARAMETER C_CLKOUT5_FREQ = 200000000
+ PARAMETER C_CLKOUT5_GROUP = PLLE0
+ PARAMETER C_EXT_RESET_HIGH = 0
  PORT LOCKED = clk_gen_locked
  PORT CLKOUT3 = clk_100_0000MHzPLLE0
  PORT RST = RESET
@@ -192,7 +200,8 @@ BEGIN clock_generator
  PORT CLKOUT1 = clk_400_0000MHzPLLE0_nobuf
  PORT CLKOUT0 = clk_400_0000MHz337.5PLLE0_nobuf
  PORT CLKOUT4 = clk_200_0000MHzPLLE0
- PORT CLKIN = CLK
+ PORT CLKOUT5 = clk_50_0000MHzPLLE0
+ PORT CLKIN = CLK_100MHz
 END
 
 BEGIN axi_cdma
@@ -268,9 +277,9 @@ BEGIN axi_pcie
  PARAMETER INSTANCE = PCI_Express
  PARAMETER HW_VER = 1.08.a
  PARAMETER C_S_AXI_ID_WIDTH = 4
- PARAMETER C_S_AXI_DATA_WIDTH = 64
- PARAMETER C_M_AXI_DATA_WIDTH = 64
- PARAMETER C_NO_OF_LANES = 2
+ PARAMETER C_S_AXI_DATA_WIDTH = 128
+ PARAMETER C_M_AXI_DATA_WIDTH = 128
+ PARAMETER C_NO_OF_LANES = 8
  PARAMETER C_MAX_LINK_SPEED = 0
  PARAMETER C_DEVICE_ID = 0x0505
  PARAMETER C_VENDOR_ID = 0x10EE
@@ -352,25 +361,50 @@ BEGIN axi_iic
  PORT Scl = IIC_MAIN_SCL
 END
 
+BEGIN mii_to_rmii
+ PARAMETER INSTANCE = mii_to_rmii_0
+ PARAMETER HW_VER = 1.01.a
+ PORT Rmii2Phy_txd = mii_to_rmii_0_Rmii2Phy_txd
+ PORT Rmii2Phy_tx_en = mii_to_rmii_0_Rmii2Phy_tx_en
+ PORT Phy2Rmii_crs_dv = mii_to_rmii_0_Phy2Rmii_crs_dv
+ PORT Phy2Rmii_rx_er = mii_to_rmii_0_Phy2Rmii_rx_er
+ PORT Phy2Rmii_rxd = mii_to_rmii_0_Phy2Rmii_rxd
+ PORT Rst_n = xps_ethernetlite_0_PHY_rst_n
+ PORT Ref_Clk = clk_50_0000MHz
+ PORT Mac2Rmii_tx_en = mii_to_rmii_0_Mac2Rmii_tx_en
+ PORT Mac2Rmii_txd = mii_to_rmii_0_Mac2Rmii_txd
+ PORT Rmii2Mac_tx_clk = mii_to_rmii_0_Rmii2Mac_tx_clk
+ PORT Rmii2Mac_rx_clk = mii_to_rmii_0_Rmii2Mac_rx_clk
+ PORT Rmii2Mac_col = mii_to_rmii_0_Rmii2Mac_col
+ PORT Rmii2Mac_crs = mii_to_rmii_0_Rmii2Mac_crs
+ PORT Rmii2Mac_rx_dv = mii_to_rmii_0_Rmii2Mac_rx_dv
+ PORT Rmii2Mac_rx_er = mii_to_rmii_0_Rmii2Mac_rx_er
+ PORT Rmii2Mac_rxd = mii_to_rmii_0_Rmii2Mac_rxd
+END
+
 BEGIN axi_ethernetlite
  PARAMETER INSTANCE = Ethernet_Lite
  PARAMETER HW_VER = 1.01.b
  PARAMETER C_BASEADDR = 0x40e00000
  PARAMETER C_HIGHADDR = 0x40e0ffff
+#PARAMETER C_DUPLEX = 1
+#PARAMETER C_RX_PING_PONG = 1
+#PARAMETER C_TX_PING_PONG = 1
+ PARAMETER C_INCLUDE_MDIO = 0
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT S_AXI_ACLK = clk_100_0000MHzPLLE0
- PORT PHY_tx_en = Ethernet_Lite_TX_EN
- PORT PHY_tx_clk = Ethernet_Lite_TX_CLK
- PORT PHY_tx_data = Ethernet_Lite_TXD
- PORT PHY_rx_er = Ethernet_Lite_RX_ER
- PORT PHY_dv = Ethernet_Lite_RX_DV
- PORT PHY_rx_clk = Ethernet_Lite_RX_CLK
- PORT PHY_rx_data = Ethernet_Lite_RXD
- PORT PHY_rst_n = Ethernet_Lite_PHY_RST_N
- PORT PHY_MDIO = Ethernet_Lite_MDIO
- PORT PHY_MDC = Ethernet_Lite_MDC
- PORT PHY_crs = Ethernet_Lite_CRS
- PORT PHY_col = Ethernet_Lite_COL
+# PORT PHY_MDIO = Ethernet_Lite_MDIO
+# PORT PHY_MDC = Ethernet_Lite_MDC
+ PORT PHY_rst_n = xps_ethernetlite_0_PHY_rst_n
+ PORT PHY_tx_clk = mii_to_rmii_0_Rmii2Mac_tx_clk
+ PORT PHY_rx_clk = mii_to_rmii_0_Rmii2Mac_rx_clk
+ PORT PHY_crs = mii_to_rmii_0_Rmii2Mac_crs
+ PORT PHY_dv = mii_to_rmii_0_Rmii2Mac_rx_dv
+ PORT PHY_col = mii_to_rmii_0_Rmii2Mac_col
+ PORT PHY_rx_data = mii_to_rmii_0_Rmii2Mac_rxd
+ PORT PHY_rx_er = mii_to_rmii_0_Rmii2Mac_rx_er
+ PORT PHY_tx_en = mii_to_rmii_0_Mac2Rmii_tx_en
+ PORT PHY_tx_data = mii_to_rmii_0_Mac2Rmii_txd
 END
 
 BEGIN axi_7series_ddrx

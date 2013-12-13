@@ -1,29 +1,62 @@
 #
 # pin constraints
 #
-NET CLK_N LOC = "AD11"  |  IOSTANDARD = "DIFF_SSTL15";
-NET CLK_P LOC = "AD12"  |  IOSTANDARD = "DIFF_SSTL15";
-NET Ethernet_Lite_COL LOC = "W19"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_CRS LOC = "R30"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_MDC LOC = "R23"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_MDIO LOC = "J21"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_PHY_RST_N LOC = "L20"  |  IOSTANDARD = "LVCMOS25"  |  TIG;
-NET Ethernet_Lite_RXD[0] LOC = "U30"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_RXD[1] LOC = "U25"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_RXD[2] LOC = "T25"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_RXD[3] LOC = "U28"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_RX_CLK LOC = "U27"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_RX_DV LOC = "R28"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_RX_ER LOC = "V26"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_TXD[0] LOC = "N27"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_TXD[1] LOC = "N25"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_TXD[2] LOC = "M29"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_TXD[3] LOC = "L28"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_TX_CLK LOC = "M28"  |  IOSTANDARD = "LVCMOS25";
-NET Ethernet_Lite_TX_EN LOC = "M27"  |  IOSTANDARD = "LVCMOS25";
-NET IIC_MAIN_SCL LOC = "K21"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW";
-NET IIC_MAIN_SDA LOC = "L21"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW";
-NET Linear_Flash_address[0] LOC = "M22"  |  IOSTANDARD = "LVCMOS25";
+NET CLK_100MHz LOC = "U27"  |  IOSTANDARD = "LVCMOS25";
+NET RESET      LOC = "U28"  |  IOSTANDARD = "LVCMOS25" | PULLUP;
+
+NET "CLK_100MHz" TNM_NET = sys_clk_pin;
+TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
+
+# Ethernet Lite RMII 
+Net xps_ethernetlite_0_50_O_pin       LOC=AG29  | IOSTANDARD = LVCMOS25;
+Net xps_ethernetlite_0_50_I_pin       LOC=AB27  | IOSTANDARD = LVCMOS25;
+
+Net xps_ethernetlite_0_PHY_rst_n_pin  LOC=Y30   | IOSTANDARD = LVCMOS25;
+#Net xps_ethernetlite_0_PHY_MDIO_pin   LOC=AB29 | IOSTANDARD = LVCMOS25;
+#Net xps_ethernetlite_0_PHY_MDC_pin    LOC=AE29 | IOSTANDARD = LVCMOS25;
+
+Net mii_to_rmii_0_Rmii2Phy_tx_en_pin  LOC=AH29 | IOSTANDARD = LVCMOS25;
+Net mii_to_rmii_0_Rmii2Phy_txd_pin<0> LOC=AK29 | IOSTANDARD = LVCMOS25;
+Net mii_to_rmii_0_Rmii2Phy_txd_pin<1> LOC=AK30 | IOSTANDARD = LVCMOS25;
+
+Net mii_to_rmii_0_Phy2Rmii_rx_er_pin  LOC=AH30 | IOSTANDARD = LVCMOS25;
+Net mii_to_rmii_0_Phy2Rmii_crs_dv_pin LOC=AG30 | IOSTANDARD = LVCMOS25;
+Net mii_to_rmii_0_Phy2Rmii_rxd_pin<0> LOC=AJ28 | IOSTANDARD = LVCMOS25;
+Net mii_to_rmii_0_Phy2Rmii_rxd_pin<1> LOC=AF30 | IOSTANDARD = LVCMOS25;
+
+NET  mii_to_rmii_0_Phy2Rmii_rxd_pin<1> NODELAY;
+NET  mii_to_rmii_0_Phy2Rmii_rxd_pin<0> NODELAY;
+NET  mii_to_rmii_0_Phy2Rmii_crs_dv_pin NODELAY;
+NET  mii_to_rmii_0_Phy2Rmii_rx_er_pin  NODELAY;
+
+NET  mii_to_rmii_0_Rmii2Phy_txd_pin<1> NODELAY;
+NET  mii_to_rmii_0_Rmii2Phy_txd_pin<0> NODELAY;
+NET  mii_to_rmii_0_Rmii2Phy_tx_en_pin  NODELAY;
+
+INST mii_to_rmii_0_Phy2Rmii_rxd_pin<1> IOB = true;
+INST mii_to_rmii_0_Phy2Rmii_rxd_pin<0> IOB = true;
+INST mii_to_rmii_0_Phy2Rmii_crs_dv_pin IOB = true;
+INST mii_to_rmii_0_Phy2Rmii_rx_er_pin  IOB = true;
+
+INST mii_to_rmii_0_Rmii2Phy_txd_pin<1> IOB = true;
+INST mii_to_rmii_0_Rmii2Phy_txd_pin<0> IOB = true;
+INST mii_to_rmii_0_Rmii2Phy_tx_en_pin  IOB = true;
+
+# FAN IIC
+NET IIC_MAIN_SCL LOC = "U25"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW" | PULLUP;
+NET IIC_MAIN_SDA LOC = "U29"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW" | PULLUP;
+
+# Flash 
+NET Linear_Flash_address[0]  LOC = "M22"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_address[1]  LOC = "M23"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_address[2]  LOC = "N26"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_address[3]  LOC = "N19"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_address[4]  LOC = "N20"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_address[5]  LOC = "N21"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_address[6]  LOC = "N22"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_address[7]  LOC = "N24"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_address[8]  LOC = "P21"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_address[9]  LOC = "P22"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[10] LOC = "V27"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[11] LOC = "V29"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[12] LOC = "V30"  |  IOSTANDARD = "LVCMOS25";
@@ -34,57 +67,49 @@ NET Linear_Flash_address[16] LOC = "V20"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[17] LOC = "W23"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[18] LOC = "W24"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[19] LOC = "U23"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_address[1] LOC = "M23"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[20] LOC = "V21"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[21] LOC = "V22"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[22] LOC = "U24"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[23] LOC = "V24"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[24] LOC = "W21"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[25] LOC = "W22"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_address[2] LOC = "N26"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_address[3] LOC = "N19"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_address[4] LOC = "N20"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_address[5] LOC = "N21"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_address[6] LOC = "N22"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_address[7] LOC = "N24"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_address[8] LOC = "P21"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_address[9] LOC = "P22"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_adv_ldn LOC = "M30"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_ce_n LOC = "U19"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[0] LOC = "R26"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[10] LOC = "T21"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[11] LOC = "T20"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[12] LOC = "R21"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[13] LOC = "R20"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[14] LOC = "R25"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[15] LOC = "P24"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[1] LOC = "P26"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[2] LOC = "T30"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[3] LOC = "P28"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[4] LOC = "P27"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[5] LOC = "R29"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[6] LOC = "P29"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[7] LOC = "U20"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[8] LOC = "T23"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_data[9] LOC = "T22"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_oe_n LOC = "M24"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_we_n LOC = "M25"  |  IOSTANDARD = "LVCMOS25";
-NET RESET LOC = "AB7"  |  IOSTANDARD = "LVCMOS15";
-NET RS232_Uart_1_sin LOC = "M19"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_adv_ldn     LOC = "M30"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_ce_n        LOC = "U19"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[0]     LOC = "R26"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[1]     LOC = "P26"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[2]     LOC = "T30"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[3]     LOC = "P28"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[4]     LOC = "P27"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[5]     LOC = "R29"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[6]     LOC = "P29"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[7]     LOC = "U20"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[8]     LOC = "T23"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[9]     LOC = "T22"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[10]    LOC = "T21"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[11]    LOC = "T20"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[12]    LOC = "R21"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[13]    LOC = "R20"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[14]    LOC = "R25"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_data[15]    LOC = "P24"  |  IOSTANDARD = "LVCMOS25";
+
+NET Linear_Flash_oe_n        LOC = "M24"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_we_n        LOC = "M25"  |  IOSTANDARD = "LVCMOS25";
+
+# RS 232
+NET RS232_Uart_1_sin  LOC = "M19"  |  IOSTANDARD = "LVCMOS25";
 NET RS232_Uart_1_sout LOC = "K24"  |  IOSTANDARD = "LVCMOS25";
+
 NET sm_fan_pwm_net_vcc LOC = "L26"  |  IOSTANDARD = "LVCMOS25";
 #
 # additional constraints
 #
 
-NET "CLK" TNM_NET = sys_clk_pin;
-TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 200000 kHz;
 
 
 # Added for RevC board
 CONFIG DCI_CASCADE = "33 32 34";
 # (from CoreGen) No PULLUP
-NET "PCIe_perstn" LOC = "G25"  | IOSTANDARD = "LVCMOS25" | NODELAY ; 		
+NET "PCIe_perstn" LOC = "Y20"  | IOSTANDARD = "LVCMOS25" | NODELAY ; 		
 
 ###############################################################################
 #
@@ -113,11 +138,14 @@ INST "*/PCIe_Diff_Clk_I/USE_IBUFDS_GTE2.GEN_IBUFDS_GTE2[0].IBUFDS_GTE2_I" LOC = 
 # Kintex-7 GT Transceiver User Guide (UG) for more information.
 #
 
-# PCIe Lane 0
 INST "*pcie_7x*/*gt_top_i/pipe_wrapper_i/pipe_lane[0].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X0Y7;
-
-# PCIe Lane 1
 INST "*pcie_7x*/*gt_top_i/pipe_wrapper_i/pipe_lane[1].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X0Y6;
+INST "*pcie_7x*/*gt_top_i/pipe_wrapper_i/pipe_lane[2].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X0Y5;
+INST "*pcie_7x*/*gt_top_i/pipe_wrapper_i/pipe_lane[3].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X0Y4;
+INST "*pcie_7x*/*gt_top_i/pipe_wrapper_i/pipe_lane[4].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X0Y3;
+INST "*pcie_7x*/*gt_top_i/pipe_wrapper_i/pipe_lane[5].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X0Y2;
+INST "*pcie_7x*/*gt_top_i/pipe_wrapper_i/pipe_lane[6].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X0Y1;
+INST "*pcie_7x*/*gt_top_i/pipe_wrapper_i/pipe_lane[7].gt_wrapper_i/gtx_channel.gtxe2_channel_i" LOC = GTXE2_CHANNEL_X0Y0;
 
 #
 # PCI Express Block placement. This constraint selects the PCI Express
