@@ -7,7 +7,7 @@ MHS File: k7_325_selftest.mhs
 Architecture: kintex7
 Device: xc7k325t
 Package: ffg900
-SpeedGrade: -2
+SpeedGrade: -3
 UserCmd1: 
 UserCmd1Type: 0
 UserCmd2: 
