@@ -1,7 +1,7 @@
 #
 # pin constraints
 #
-NET CLK_100MHz LOC = "AG10" |  IOSTANDARD = "LVCMOS25";
+NET CLK_100MHz LOC = "AG10" |  IOSTANDARD = "SSTL15";
 NET RESET      LOC = "U28"  |  IOSTANDARD = "LVCMOS25" | PULLUP;
 
 NET "CLK_100MHz" TNM_NET = sys_clk_pin;
