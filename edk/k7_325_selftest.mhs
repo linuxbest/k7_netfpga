@@ -29,21 +29,21 @@
 # PORT xps_ethernetlite_0_PHY_MDIO_pin = xps_ethernetlite_0_PHY_MDIO, DIR = IO
 
 # DDR3 
- PORT ddr_memory_we_n = ddr_memory_we_n, DIR = O
- PORT ddr_memory_ras_n = ddr_memory_ras_n, DIR = O
- PORT ddr_memory_odt = ddr_memory_odt, DIR = O
- PORT ddr_memory_dqs_n = ddr_memory_dqs_n, DIR = IO, VEC = [0:0]
- PORT ddr_memory_dqs = ddr_memory_dqs, DIR = IO, VEC = [0:0]
- PORT ddr_memory_dq = ddr_memory_dq, DIR = IO, VEC = [7:0]
- PORT ddr_memory_dm = ddr_memory_dm, DIR = O, VEC = [0:0]
- PORT ddr_memory_ddr3_rst = ddr_memory_ddr3_rst, DIR = O
- PORT ddr_memory_cs_n = ddr_memory_cs_n, DIR = O
- PORT ddr_memory_clk_n = ddr_memory_clk_n, DIR = O, SIGIS = CLK
- PORT ddr_memory_clk = ddr_memory_clk, DIR = O, SIGIS = CLK
- PORT ddr_memory_cke = ddr_memory_cke, DIR = O
- PORT ddr_memory_cas_n = ddr_memory_cas_n, DIR = O
- PORT ddr_memory_ba = ddr_memory_ba, DIR = O, VEC = [2:0]
- PORT ddr_memory_addr = ddr_memory_addr, DIR = O, VEC = [13:0]
+ PORT c0_ddr3_reset_n = ddr_memory_ddr3_rst, DIR = O
+ PORT c0_ddr3_we_n  = ddr_memory_we_n, DIR = O
+ PORT c0_ddr3_ras_n = ddr_memory_ras_n, DIR = O
+ PORT c0_ddr3_odt   = ddr_memory_odt, DIR = O
+ PORT c0_ddr3_dqs_n = c0_ddr3_dqs_n, DIR = IO, VEC = [7:0]
+ PORT c0_ddr3_dqs_p = c0_ddr3_dqs_p, DIR = IO, VEC = [7:0]
+ PORT c0_ddr3_dq    = c0_ddr3_dq, DIR = IO, VEC = [63:0]
+ PORT c0_ddr3_dm    = ddr_memory_dm, DIR = O, VEC = [7:0]
+ PORT c0_ddr3_cs_n  = ddr_memory_cs_n, DIR = O
+ PORT c0_ddr3_clk_n = ddr_memory_clk_n, DIR = O, SIGIS = CLK
+ PORT c0_ddr3_clk_p = ddr_memory_clk, DIR = O, SIGIS = CLK
+ PORT c0_ddr3_cke   = ddr_memory_cke, DIR = O
+ PORT c0_ddr3_cas_n = ddr_memory_cas_n, DIR = O
+ PORT c0_ddr3_ba    = ddr_memory_ba, DIR = O, VEC = [2:0]
+ PORT c0_ddr3_addr  = ddr_memory_addr, DIR = O, VEC = [15:0]
 
 # PCI Express
  PORT PCI_Express_pci_exp_txp = PCI_Express_pci_exp_txp, DIR = O, VEC = [7:0]
@@ -416,10 +416,10 @@ BEGIN axi_7series_ddrx
  PARAMETER C_INTERCONNECT_S_AXI_R_REGISTER = 8
  PARAMETER C_INTERCONNECT_S_AXI_W_REGISTER = 8
  PARAMETER C_INTERCONNECT_S_AXI_B_REGISTER = 8
- PARAMETER C_DM_WIDTH = 1
- PARAMETER C_DQS_WIDTH = 1
- PARAMETER C_DQ_WIDTH = 8
- PARAMETER C_ROW_WIDTH = 14
+ PARAMETER C_DM_WIDTH = 8
+ PARAMETER C_DQS_WIDTH = 8
+ PARAMETER C_DQ_WIDTH = 64
+ PARAMETER C_ROW_WIDTH = 16
  PARAMETER C_INTERCONNECT_S_AXI_MASTERS = microblaze_0.M_AXI_DC & microblaze_0.M_AXI_IC & PCI_Express.M_AXI & axi_cdma_0.M_AXI
  PARAMETER C_S_AXI_SUPPORTS_NARROW_BURST = 0
  PARAMETER C_MEM_BASEPARTNO = MT8JTF12864HZ-1G6
@@ -430,9 +430,9 @@ BEGIN axi_7series_ddrx
  PORT ddr_we_n = ddr_memory_we_n
  PORT ddr_ras_n = ddr_memory_ras_n
  PORT ddr_odt = ddr_memory_odt
- PORT ddr_dqs_n = ddr_memory_dqs_n
- PORT ddr_dqs_p = ddr_memory_dqs
- PORT ddr_dq = ddr_memory_dq
+ PORT ddr_dqs_n = c0_ddr3_dqs_n
+ PORT ddr_dqs_p = c0_ddr3_dqs_p
+ PORT ddr_dq = c0_ddr3_dq
  PORT ddr_dm = ddr_memory_dm
  PORT ddr_reset_n = ddr_memory_ddr3_rst
  PORT ddr_cs_n = ddr_memory_cs_n
