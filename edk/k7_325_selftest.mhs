@@ -27,6 +27,7 @@
  PORT xps_ethernetlite_0_PHY_rst_n_pin = xps_ethernetlite_0_PHY_rst_n, DIR = O
 # PORT xps_ethernetlite_0_PHY_MDC_pin = xps_ethernetlite_0_PHY_MDC, DIR = O
 # PORT xps_ethernetlite_0_PHY_MDIO_pin = xps_ethernetlite_0_PHY_MDIO, DIR = IO
+ PORT  xps_ethernetlite_0_PWRDOWN_pin = net_vcc, DIR = O
 
 # DDR3 
  PORT c0_ddr3_reset_n = ddr_memory_ddr3_rst, DIR = O
@@ -62,9 +63,11 @@
  PORT Linear_Flash_adv_ldn = Linear_Flash_adv_ldn, DIR = O
  PORT Linear_Flash_address = Linear_Flash_address, DIR = O, VEC = [0:25]
  
- PORT sm_fan_pwm_net_vcc = net_vcc, DIR = O
  PORT IIC_MAIN_SDA = IIC_MAIN_SDA, DIR = IO
  PORT IIC_MAIN_SCL = IIC_MAIN_SCL, DIR = IO
+ PORT IIC_DDR3_SDA = IIC_DDR3_SDA, DIR = IO
+ PORT IIC_DDR3_SCL = IIC_DDR3_SCL, DIR = IO
+ 
 
 BEGIN util_vector_logic
  PARAMETER INSTANCE = util_and_logic_0
@@ -359,6 +362,19 @@ BEGIN axi_iic
  PORT S_AXI_ACLK = clk_100_0000MHzPLLE0
  PORT Sda = IIC_MAIN_SDA
  PORT Scl = IIC_MAIN_SCL
+END
+
+BEGIN axi_iic
+ PARAMETER INSTANCE = IIC_DDR3
+ PARAMETER HW_VER = 1.02.a
+ PARAMETER C_IIC_FREQ = 100000
+ PARAMETER C_TEN_BIT_ADR = 0
+ PARAMETER C_BASEADDR = 0x40810000
+ PARAMETER C_HIGHADDR = 0x4081ffff
+ BUS_INTERFACE S_AXI = axi4lite_0
+ PORT S_AXI_ACLK = clk_100_0000MHzPLLE0
+ PORT Sda = IIC_DDR3_SDA
+ PORT Scl = IIC_DDR3_SCL
 END
 
 BEGIN mii_to_rmii

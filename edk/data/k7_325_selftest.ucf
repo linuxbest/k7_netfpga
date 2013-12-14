@@ -12,6 +12,7 @@ Net xps_ethernetlite_0_50_O_pin       LOC=AG29  | IOSTANDARD = LVCMOS25;
 Net xps_ethernetlite_0_50_I_pin       LOC=AB27  | IOSTANDARD = LVCMOS25;
 
 Net xps_ethernetlite_0_PHY_rst_n_pin  LOC=Y30   | IOSTANDARD = LVCMOS25;
+Net xps_ethernetlite_0_PWRDOWN_pin    LOC=AC30  | IOSTANDARD = LVCMOS25;
 #Net xps_ethernetlite_0_PHY_MDIO_pin   LOC=AB29 | IOSTANDARD = LVCMOS25;
 #Net xps_ethernetlite_0_PHY_MDC_pin    LOC=AE29 | IOSTANDARD = LVCMOS25;
 
@@ -45,6 +46,10 @@ INST mii_to_rmii_0_Rmii2Phy_tx_en_pin  IOB = true;
 # FAN IIC
 NET IIC_MAIN_SCL LOC = "U25"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW" | PULLUP;
 NET IIC_MAIN_SDA LOC = "U29"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW" | PULLUP;
+
+# DDR3 IIC
+NET IIC_DDR3_SCL LOC = "AE20"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW" | PULLUP;
+NET IIC_DDR3_SDA LOC = "AK21"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW" | PULLUP;
 
 # Flash 
 NET Linear_Flash_address[0]  LOC = "M22"  |  IOSTANDARD = "LVCMOS25";
@@ -96,11 +101,9 @@ NET Linear_Flash_oe_n        LOC = "M24"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_we_n        LOC = "M25"  |  IOSTANDARD = "LVCMOS25";
 
 # RS 232
-NET RS232_Uart_1_sin  LOC = "M19"  |  IOSTANDARD = "LVCMOS25";
-NET RS232_Uart_1_sout LOC = "K24"  |  IOSTANDARD = "LVCMOS25";
+NET RS232_Uart_1_sin  LOC = "AF26"  |  IOSTANDARD = "LVCMOS25";
+NET RS232_Uart_1_sout LOC = "AF27"  |  IOSTANDARD = "LVCMOS25";
 
-NET sm_fan_pwm_net_vcc LOC = "L26"  |  IOSTANDARD = "LVCMOS25";
-#
 # additional constraints
 #
 
