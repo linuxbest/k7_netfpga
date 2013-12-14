@@ -44,7 +44,7 @@
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AD8" SLEW="FAST" name="ddr3_addr[3]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AC10" SLEW="FAST" name="ddr3_addr[4]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AB10" SLEW="FAST" name="ddr3_addr[5]" IN_TERM="" />
-            <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AB13" SLEW="FAST" name="ddr3_addr[6]" IN_TERM="" />
+            <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AH10" SLEW="FAST" name="ddr3_addr[6]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AA13" SLEW="FAST" name="ddr3_addr[7]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AA10" SLEW="FAST" name="ddr3_addr[8]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AA11" SLEW="FAST" name="ddr3_addr[9]" IN_TERM="" />
