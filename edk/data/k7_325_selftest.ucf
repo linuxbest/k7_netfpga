@@ -2,7 +2,7 @@
 # pin constraints
 NET CLK_100MHz LOC = "AG10"  |  IOSTANDARD = "SSTL15";
 
-NET RESET      LOC = "U28"  |  IOSTANDARD = "LVCMOS25" | PULLUP;
+NET RESET      LOC = "R19"  |  IOSTANDARD = "LVCMOS25" | PULLUP;
 
 NET "CLK_100MHz" TNM_NET = sys_clk_pin;
 TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
@@ -42,10 +42,6 @@ INST mii_to_rmii_0_Phy2Rmii_rx_er_pin  IOB = true;
 INST mii_to_rmii_0_Rmii2Phy_txd_pin<1> IOB = true;
 INST mii_to_rmii_0_Rmii2Phy_txd_pin<0> IOB = true;
 INST mii_to_rmii_0_Rmii2Phy_tx_en_pin  IOB = true;
-
-# FAN IIC
-NET IIC_MAIN_SCL LOC = "U25"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW" | PULLUP;
-NET IIC_MAIN_SDA LOC = "U29"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW" | PULLUP;
 
 # DDR3 IIC
 NET IIC_DDR3_SCL LOC = "AE20"  |  DRIVE = "8"  |  IOSTANDARD = "LVCMOS25"  |  SLEW = "SLOW" | PULLUP;
@@ -130,9 +126,9 @@ NET "PCIe_perstn" LOC = "Y20"  | IOSTANDARD = "LVCMOS25" | NODELAY ;
 # Please refer to the Kintex-7 GT Transceiver User Guide
 # (UG) for guidelines regarding clock resource selection.
 #
-INST "*/PCIe_Diff_Clk_I/USE_IBUFDS_GTE2.GEN_IBUFDS_GTE2[0].IBUFDS_GTE2_I" LOC = IBUFDS_GTE2_X0Y1;
-#NET  PCIe_Clk_QO_P       LOC = "U8";
-#NET  PCIe_Clk_QO_N       LOC = "U7";
+INST "*/PCIe_Diff_Clk_I/USE_IBUFDS_GTE2.GEN_IBUFDS_GTE2[0].IBUFDS_GTE2_I" LOC = IBUFDS_GTE2_X0Y2;
+#NET  PCIe_Clk_QO_P       LOC = "L8";
+#NET  PCIe_Clk_QO_N       LOC = "L7";
 
 #
 # Transceiver instance placement.  This constraint selects the
