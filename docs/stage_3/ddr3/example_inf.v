@@ -56,6 +56,8 @@ module example_inf (/*AUTOARG*/
    output clk_ref_i;
 
 
+   assign sys_clk_i = sys_clk;
+   assign clk_ref_i = sys_clk;
 endmodule
 // 
 // example_inf.v ends here
