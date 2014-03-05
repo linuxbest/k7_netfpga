@@ -149,8 +149,9 @@ NET   "ddr3_ck_p[0]"                           LOC = "AJ9"     |   IOSTANDARD = 
 NET   "ddr3_ck_n[0]"                           LOC = "AK9"     |   IOSTANDARD = DIFF_SSTL15          |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L15N_T2_DQS_33
 
 NET   "sys_clk"                                LOC = "AG10"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = DONTCARE    ; # Pad function: IO_L13P_T2_MRCC_33
-
-
+NET   "sys_rst"                                LOC = "AK10"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = DONTCARE    ; 
+NET   "tg_compare_error"                       LOC = "AF12"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = DONTCARE    ; # Pad function: IO_L13P_T2_MRCC_33
+NET   "init_calib_complete"                    LOC = "AG12"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = DONTCARE    ; # Pad function: IO_L13P_T2_MRCC_33
 
 INST "*/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_D.ddr_byte_lane_D/phaser_out" LOC=PHASER_OUT_PHY_X1Y3;
 INST "*/ddr_phy_4lanes_2.u_ddr_phy_4lanes/ddr_byte_lane_C.ddr_byte_lane_C/phaser_out" LOC=PHASER_OUT_PHY_X1Y2;
