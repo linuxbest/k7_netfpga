@@ -2,7 +2,7 @@ set -tmpdir ./
 set -xsthdpdir ..\synth\xst
 run
 -ifn ../ddr3_tb.prj
--ofn ../ddr3_tb 
+-ofn ddr3_tb 
 -p xc7k325t-2-ffg900
 -top ddr3_tb
 -lso ../ddr3_tb.lso

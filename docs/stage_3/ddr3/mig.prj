@@ -10,8 +10,8 @@
     <XADC_En>Enabled</XADC_En>
     <TargetFPGA>xc7k325t-ffg900/-2</TargetFPGA>
     <Version>1.9</Version>
-    <SystemClock>NO_BUFFER</SystemClock>
-    <ReferenceClock>NO_BUFFER</ReferenceClock>
+    <SystemClock>Single-Ended</SystemClock>
+    <ReferenceClock>Single-Ended</ReferenceClock>
     <SysResetPolarity>ACTIVE LOW</SysResetPolarity>
     <BankSelectionFlag>FALSE</BankSelectionFlag>
     <InternalVref>0</InternalVref>
@@ -36,7 +36,7 @@
         <Ordering>Normal</Ordering>
         <CustomPart>FALSE</CustomPart>
         <NewPartName></NewPartName>
-        <RowAddress>14</RowAddress>
+        <RowAddress>16</RowAddress>
         <ColAddress>10</ColAddress>
         <BankAddress>3</BankAddress>
         <MemoryVoltage>1.5V</MemoryVoltage>
@@ -47,7 +47,9 @@
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AK14" SLEW="FAST" name="ddr3_addr[10]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AD11" SLEW="FAST" name="ddr3_addr[11]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AE8" SLEW="FAST" name="ddr3_addr[12]" IN_TERM="" />
-            <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AB12" SLEW="FAST" name="ddr3_addr[13]" IN_TERM="" />
+	    <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AB12" SLEW="FAST" name="ddr3_addr[13]" IN_TERM="" />
+	    <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AK11" SLEW="FAST" name="ddr3_addr[14]" IN_TERM="" />
+	    <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AC11" SLEW="FAST" name="ddr3_addr[15]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AG9" SLEW="FAST" name="ddr3_addr[1]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AH10" SLEW="FAST" name="ddr3_addr[2]" IN_TERM="" />
             <Pin VCCAUX_IO="HIGH" IOSTANDARD="SSTL15" PADName="AH9" SLEW="FAST" name="ddr3_addr[3]" IN_TERM="" />

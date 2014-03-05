@@ -95,11 +95,8 @@ module ddr3_tb (/*AUTOARG*/
    // End of automatics
 
 
-   /*AUTOWIRE*/
-   // Beginning of automatic wires (for undeclared instantiated-module outputs)
-   wire			clk_ref_i;		// From example_inf of example_inf.v
-   wire			sys_clk_i;		// From example_inf of example_inf.v
-   // End of automatics
+   wire		clk_ref_i;		// From example_inf of example_inf.v
+   wire		sys_clk_i;		// From example_inf of example_inf.v
 
 
    example_top
@@ -127,6 +124,9 @@ module ddr3_tb (/*AUTOARG*/
 		  .sys_clk_i		(sys_clk_i),
 		  .clk_ref_i		(clk_ref_i),
 		  .sys_rst		(sys_rst));
+
+  defparam example_top.SYSCLK_TYPE = "NO_BUFFER";
+  defparam example_top.REFCLK_TYPE = "NO_BUFFER";
 
    example_inf
      example_inf (/*AUTOINST*/

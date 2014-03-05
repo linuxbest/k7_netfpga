@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.6
-# Date: Wed Mar  5 04:14:48 2014
+# Date: Wed Mar  5 05:46:53 2014
 #
 ##############################################################
 #
@@ -46,4 +46,4 @@ CSET xml_input_file=./mig.prj
 MISC pkg_timestamp=2013-06-08T23:00:50Z
 # END Extra information
 GENERATE
-# CRC: 6867796e
+# CRC: 126f6ea6
