@@ -1,4 +1,4 @@
-all: ddr3_tb.bit
+all: mig_7series_v1_9_readme.txt ddr3_tb.bit
 
 CGP=../coregen.cgp
 XCO=../mig_7series_v1_9.xco
