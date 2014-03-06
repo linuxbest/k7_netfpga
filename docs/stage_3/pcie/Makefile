@@ -1,5 +1,7 @@
 all: pcie_7x_v1_10_readme.txt k7_pcie.bit
 
+export XIL_PAR_DESIGN_CHECK_VERBOSE=1
+
 pcie_7x_v1_10_readme.txt: pcie_7x_v1_10.xco k7_325.cgp
 	coregen -p k7_325.cgp -b pcie_7x_v1_10.xco
 
@@ -22,4 +24,4 @@ k7_pcie.bit: k7_pcie.twr
 	bitgen -w k7_pcie_rt.ncd k7_pcie.bit
 
 clean:
-	rm -fr *.ngd *.ncd *.pcf *.twr *.bit pcie_7x*
+	rm -fr *.ngd *.ncd *.pcf *.twr *.bit pcie_7x_v1_10
