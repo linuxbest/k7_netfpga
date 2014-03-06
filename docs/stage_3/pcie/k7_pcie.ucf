@@ -111,7 +111,7 @@ NET "sys_rst_n" LOC = "AK10" | IOSTANDARD = LVCMOS18 | PULLUP | NODELAY ;
 # (UG) for guidelines regarding clock resource selection.
 #
 
-INST "refclk_ibuf" LOC = IBUFDS_GTE2_X0Y3;
+INST "refclk_ibuf" LOC = IBUFDS_GTE2_X0Y2;
 
 #
 # Transceiver instance placement.  This constraint selects the
