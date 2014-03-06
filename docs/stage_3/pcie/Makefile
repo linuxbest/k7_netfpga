@@ -10,7 +10,7 @@ k7_pcie.ngd: pcie_7x_v1_10/implement/xilinx_pcie_2_1_ep_7x.ngc
 	ngdbuild -verbose -uc k7_pcie.ucf $^ -sd . ./k7_pcie.ngd
 
 k7_pcie_map.ncd: k7_pcie.ngd
-	map -w -register_duplication on -ol high -o $@ $^ k7_pcie_map.pcf
+	map -w -register_duplication on -ol high -o $@ $^ k7_pcie.pcf
 
 k7_pcie_rt.ncd: k7_pcie_map.ncd
 	par -ol high -w $^ $@ k7_pcie.pcf
