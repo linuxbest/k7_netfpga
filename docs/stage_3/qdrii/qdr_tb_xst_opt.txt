@@ -1,0 +1,9 @@
+set -tmpdir ./
+set -xsthdpdir ..\synth\xst
+run
+-ifn ../qdr_tb.prj
+-ofn qdr_tb 
+-p xc7k325t-2-ffg900
+-top qdr_tb
+-lso qdr_tb.lso
+quit

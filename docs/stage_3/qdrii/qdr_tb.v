@@ -54,8 +54,8 @@ module qdr_tb (/*AUTOARG*/
 
    parameter NUM_DEVICES = 1;
    parameter DATA_WIDTH  = 36;
-   parameter BW_WIDTH    = 9;
-   parameter ADDR_WIDTH  = 10;
+   parameter BW_WIDTH    = 4;
+   parameter ADDR_WIDTH  = 18;
    
    /*AUTOINPUT*/
    // Beginning of automatic inputs (from unused autoinst inputs)
@@ -107,6 +107,9 @@ module qdr_tb (/*AUTOARG*/
 		  .qdriip_cq_n		(qdriip_cq_n[NUM_DEVICES-1:0]),
 		  .qdriip_q		(qdriip_q[DATA_WIDTH-1:0]),
 		  .sys_rst		(sys_rst));
+   
+  defparam example_top.SYSCLK_TYPE = "NO_BUFFER";
+  defparam example_top.REFCLK_TYPE = "NO_BUFFER";
 
    
    example_inf
