@@ -149,7 +149,7 @@ NET   "qdriip_k_p[0]"                          LOC = "F25"     |   IOSTANDARD = 
 NET   "qdriip_k_n[0]"                          LOC = "E25"     |   IOSTANDARD = DIFF_HSTL_I          |     SLEW = FAST        ; # Pad function: IO_L3N_T0_DQS_16
 
 NET   "sys_clk"                                LOC = "AG10"    |   IOSTANDARD = HSTL_I; 
-NET   "sys_rst"                                LOC = "AK10"    |   IOSTANDARD = HSTL_I;
+NET   "sys_rst"                                LOC = "AK10"    |   IOSTANDARD = HSTL_I | PULLUP;
 NET   "tg_compare_error"                       LOC = "AF12"    |   IOSTANDARD = HSTL_I;
 NET   "init_calib_complete"                    LOC = "AG12"    |   IOSTANDARD = HSTL_I;
 
