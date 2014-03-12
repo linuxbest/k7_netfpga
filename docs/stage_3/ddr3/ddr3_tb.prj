@@ -68,7 +68,8 @@ verilog work mig_7series_v1_9/example_design/../user_design/rtl/ui/mig_7series_v
 verilog work mig_7series_v1_9/example_design/../user_design/rtl/ui/mig_7series_v1_9_ui_rd_data.v
 verilog work mig_7series_v1_9/example_design/../user_design/rtl/ui/mig_7series_v1_9_ui_top.v
 verilog work mig_7series_v1_9/example_design/../user_design/rtl/ui/mig_7series_v1_9_ui_wr_data.v
-verilog work mig_7series_v1_9/example_design/../user_design/rtl/mig_7series_v1_9.v
 
 verilog work ../ddr3_tb.v
 verilog work ../example_inf.v
+verilog work ../mig_7series_v1_9.v
+
