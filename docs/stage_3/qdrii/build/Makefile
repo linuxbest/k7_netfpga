@@ -36,7 +36,7 @@ qdr_tb.twr: qdr_tb.ncd
 
 CGS=icon3.ngc
 CGS+=ila256_16.ngc
-CGS+=ila516_16.ngc
+CGS+=ila512_16.ngc
 CGS+=vio_async_in256_16.ngc
 
 # BIT
