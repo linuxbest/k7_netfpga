@@ -41,7 +41,7 @@ CGS+=vio_async_in256_sync_out72.ngc
 
 # BIT
 qdr_tb.bit: ${CGS} qdr_tb.ncd qdr_tb.twr
-	bitgen -intstyle ise qdr_tb.ncd
+	bitgen -w -intstyle ise qdr_tb.ncd
 
 mig_7series_v1_9/example_design/par/example_top.bit: mig_7series_v1_9_readme.txt
 	cd mig_7series_v1_9/example_design/par/ && ./ise_flow.sh

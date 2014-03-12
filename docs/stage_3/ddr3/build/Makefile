@@ -43,7 +43,7 @@ CGS+=ddr_vio_async_in_sync_out.ngc
 
 # BIT
 ddr3_tb.bit: ${CGS} ddr3_tb.ncd ddr3_tb.twr
-	bitgen -intstyle ise ddr3_tb.ncd
+	bitgen -w -intstyle ise ddr3_tb.ncd
 
 mig_7series_v1_9/example_design/par/example_top.bit: mig_7series_v1_9_readme.txt
 	cd mig_7series_v1_9/example_design/par/ && ./ise_flow.sh
