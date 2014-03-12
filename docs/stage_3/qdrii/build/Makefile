@@ -37,7 +37,7 @@ qdr_tb.twr: qdr_tb.ncd
 CGS=icon3.ngc
 CGS+=ila256_16.ngc
 CGS+=ila512_16.ngc
-CGS+=vio_async_in256_16.ngc
+CGS+=vio_async_in256_sync_out72.ngc
 
 # BIT
 qdr_tb.bit: ${CGS} qdr_tb.ncd qdr_tb.twr
@@ -58,6 +58,6 @@ ila512_16.ngc:
 	cp mig_7series_v1_9/example_design/par/ila512_16_cg.xco .
 	coregen -p coregen.cgp -b ila512_16_cg.xco
 
-vio_async_in256_16.ngc:
-	cp mig_7series_v1_9/example_design/par/vio_async_in256_16_cg.xco .
-	coregen -p coregen.cgp -b vio_async_in256_16.xco
+vio_async_in256_sync_out72.ngc:
+	cp mig_7series_v1_9/example_design/par/vio_async_in256_sync_out72_cg.xco .
+	coregen -p coregen.cgp -b vio_async_in256_sync_out72_cg.xco
