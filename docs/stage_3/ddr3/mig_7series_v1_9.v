@@ -180,11 +180,11 @@ module mig_7series_v1_9 #
                                      // DDR2 SDRAM: Burst Type (Mode Register).
                                      // # = "SEQ" - (Sequential),
                                      //   = "INT" - (Interleaved).
-   parameter CL                    = 9,
+   parameter CL                    = 7,
                                      // in number of clock cycles
                                      // DDR3 SDRAM: CAS Latency (Mode Register 0).
                                      // DDR2 SDRAM: CAS Latency (Mode Register).
-   parameter CWL                   = 7,
+   parameter CWL                   = 6,
                                      // in number of clock cycles
                                      // DDR3 SDRAM: CAS Write Latency (Mode Register 2).
                                      // DDR2 SDRAM: Can be ignored
@@ -214,9 +214,9 @@ module mig_7series_v1_9 #
    // The following parameters are multiplier and divisor factors for PLLE2.
    // Based on the selected design frequency these parameters vary.
    //***************************************************************************
-   parameter CLKIN_PERIOD          = 10004,
+   parameter CLKIN_PERIOD          = 2000,
                                      // Input Clock Period
-   parameter CLKFBOUT_MULT         = 13,
+   parameter CLKFBOUT_MULT         = 2,
                                      // write PLL VCO multiplier
    parameter DIVCLK_DIVIDE         = 1,
                                      // write PLL VCO divisor
@@ -235,7 +235,7 @@ module mig_7series_v1_9 #
    // Memory Timing Parameters. These parameters varies based on the selected
    // memory part.
    //***************************************************************************
-   parameter tCKE                  = 5000,
+   parameter tCKE                  = 5625,
                                      // memory tCKE paramter in pS
    parameter tFAW                  = 30000,
                                      // memory tRAW paramter in pS.
@@ -247,7 +247,7 @@ module mig_7series_v1_9 #
                                      // memory tRCD paramter in pS.
    parameter tREFI                 = 7800000,
                                      // memory tREFI paramter in pS.
-   parameter tRFC                  = 110000,
+   parameter tRFC                  = 160000,
                                      // memory tRFC paramter in pS.
    parameter tRP                   = 13125,
                                      // memory tRP paramter in pS.
@@ -425,7 +425,7 @@ module mig_7series_v1_9 #
    //***************************************************************************
    // System clock frequency parameters
    //***************************************************************************
-   parameter tCK                   = 1539,
+   parameter tCK                   = 2000,
                                      // memory tCK paramter.
                                      // # = Clock Period in pS.
    parameter nCK_PER_CLK           = 4,
