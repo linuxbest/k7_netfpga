@@ -149,7 +149,7 @@ module mig_7series_v1_9 #
    parameter MEM_DENSITY           = "2Gb",
                                      // Indicates the density of the Memory part
                                      // Added for the sake of Vivado simulations
-   parameter MEM_SPEEDGRADE        = "107E",
+   parameter MEM_SPEEDGRADE        = "15E",
                                      // Indicates the Speed grade of Memory Part
                                      // Added for the sake of Vivado simulations
    parameter MEM_DEVICE_WIDTH      = 8,
@@ -214,7 +214,7 @@ module mig_7series_v1_9 #
    // The following parameters are multiplier and divisor factors for PLLE2.
    // Based on the selected design frequency these parameters vary.
    //***************************************************************************
-   parameter CLKIN_PERIOD          = 9997,
+   parameter CLKIN_PERIOD          = 10004,
                                      // Input Clock Period
    parameter CLKFBOUT_MULT         = 13,
                                      // write PLL VCO multiplier
@@ -241,7 +241,7 @@ module mig_7series_v1_9 #
                                      // memory tRAW paramter in pS.
    parameter tPRDI                 = 1_000_000,
                                      // memory tPRDI paramter in pS.
-   parameter tRAS                  = 34000,
+   parameter tRAS                  = 36000,
                                      // memory tRAS paramter in pS.
    parameter tRCD                  = 13125,
                                      // memory tRCD paramter in pS.
@@ -425,7 +425,7 @@ module mig_7series_v1_9 #
    //***************************************************************************
    // System clock frequency parameters
    //***************************************************************************
-   parameter tCK                   = 1538,
+   parameter tCK                   = 1539,
                                      // memory tCK paramter.
                                      // # = Clock Period in pS.
    parameter nCK_PER_CLK           = 4,
