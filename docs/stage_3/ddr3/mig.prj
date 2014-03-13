@@ -18,7 +18,7 @@
     <dci_hr_inouts_inputs>50 Ohms</dci_hr_inouts_inputs>
     <dci_cascade>0</dci_cascade>
     <Controller number="0" >
-        <MemoryDevice>DDR3_SDRAM/SODIMMs/MT8JTF12864HZ-1G6</MemoryDevice>
+	<MemoryDevice>DDR3_SDRAM/SODIMMs/MT8KTF51264HZ-1G6</MemoryDevice>
         <TimePeriod>1250</TimePeriod>
         <VccAuxIO>2.0V</VccAuxIO>
         <PHYRatio>4:1</PHYRatio>
@@ -173,7 +173,7 @@
             <Pin PADName="No connect" Bank="Select Bank" name="tg_compare_error" />
         </System_Control>
         <TimingParameters>
-            <Parameters twtr="7.5" trrd="6" trefi="7.8" tfaw="30" trtp="7.5" tcke="5" trfc="110" trp="13.125" tras="35" trcd="13.125" />
+            <Parameters twtr="7.5" trrd="6" trefi="7.8" tfaw="30" trtp="7.5" tcke="5" trfc="110" trp="13.125" tras="34" trcd="13.125" />
         </TimingParameters>
         <mrBurstLength name="Burst Length" >8 - Fixed</mrBurstLength>
         <mrBurstType name="Read Burst Type and Length" >Sequential</mrBurstType>

@@ -54,15 +54,15 @@ module ddr3_tb (/*AUTOARG*/
    sys_rst, sys_clk
    );
 
-   parameter DQ_WIDTH   = 8;
+   parameter DQ_WIDTH   = 64;
    parameter DQS_WIDTH  = 8;
    parameter ROW_WIDTH  = 16;
    parameter BANK_WIDTH = 3;
    parameter DM_WIDTH   = 8;
-   parameter CK_WIDTH   = 1;
-   parameter CKE_WIDTH  = 1;
+   parameter CK_WIDTH   = 2;
+   parameter CKE_WIDTH  = 2;
    parameter CS_WIDTH   = 1;
-   parameter ODT_WIDTH  = 1;
+   parameter ODT_WIDTH  = 2;
    parameter nCS_PER_RANK = 1;
 
    /*AUTOINPUT*/
@@ -125,8 +125,18 @@ module ddr3_tb (/*AUTOARG*/
 		  .clk_ref_i		(clk_ref_i),
 		  .sys_rst		(sys_rst));
 
-  defparam example_top.SYSCLK_TYPE = "NO_BUFFER";
-  defparam example_top.REFCLK_TYPE = "NO_BUFFER";
+  defparam example_top.SYSCLK_TYPE  = "NO_BUFFER";
+  defparam example_top.REFCLK_TYPE  = "NO_BUFFER";
+  defparam example_top.DQ_WIDTH     = DQ_WIDTH;
+  defparam example_top.DQS_WIDTH    = DQS_WIDTH;
+  defparam example_top.ROW_WIDTH    = ROW_WIDTH;
+  defparam example_top.BANK_WIDTH   = BANK_WIDTH;
+  defparam example_top.DM_WIDTH     = DM_WIDTH;
+  defparam example_top.CK_WIDTH     = CK_WIDTH;
+  defparam example_top.CKE_WIDTH    = CKE_WIDTH;
+  defparam example_top.CS_WIDTH     = CS_WIDTH;
+  defparam example_top.ODT_WIDTH    = ODT_WIDTH;
+  defparam example_top.nCS_PER_RANK = nCS_PER_RANK;
 
    example_inf
      example_inf (/*AUTOINST*/

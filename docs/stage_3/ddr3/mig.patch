@@ -1,0 +1,13 @@
+diff --git a/docs/stage_3/ddr3/mig_7series_v1_9.v b/docs/stage_3/ddr3/mig_7series_v1_9.v
+index e58df4c..56561bc 100644
+--- a/docs/stage_3/ddr3/mig_7series_v1_9.v
++++ b/docs/stage_3/ddr3/mig_7series_v1_9.v
+@@ -660,7 +660,7 @@ module mig_7series_v1_9 #
+     if (REFCLK_TYPE == "USE_SYSTEM_CLOCK")
+       assign clk_ref_in = mmcm_clk;
+     else
+-      assign clk_ref_in = ui_clk;
++      assign clk_ref_in = clk_ref_i;
+   endgenerate
+ 
+   mig_7series_v1_9_iodelay_ctrl #
