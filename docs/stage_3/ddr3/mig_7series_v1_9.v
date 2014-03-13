@@ -117,9 +117,9 @@ module mig_7series_v1_9 #
                                      // # of Ranks.
    parameter ODT_WIDTH             = 1,
                                      // # of ODT outputs to memory.
-   parameter ROW_WIDTH             = 16,
+   parameter ROW_WIDTH             = 15,
                                      // # of memory Row Address bits.
-   parameter ADDR_WIDTH            = 30,
+   parameter ADDR_WIDTH            = 29,
                                      // # = RANK_WIDTH + BANK_WIDTH
                                      //     + ROW_WIDTH + COL_WIDTH;
                                      // Chip Select is always tied to low for
@@ -146,10 +146,10 @@ module mig_7series_v1_9 #
    parameter PHY_CONTROL_MASTER_BANK = 1,
                                      // The bank index where master PHY_CONTROL resides,
                                      // equal to the PLL residing bank
-   parameter MEM_DENSITY           = "4Gb",
+   parameter MEM_DENSITY           = "2Gb",
                                      // Indicates the density of the Memory part
                                      // Added for the sake of Vivado simulations
-   parameter MEM_SPEEDGRADE        = "125",
+   parameter MEM_SPEEDGRADE        = "107E",
                                      // Indicates the Speed grade of Memory Part
                                      // Added for the sake of Vivado simulations
    parameter MEM_DEVICE_WIDTH      = 8,
@@ -317,14 +317,14 @@ module mig_7series_v1_9 #
                                      // position indicates a data byte lane and
                                      // a '0' indicates a control byte lane
    parameter PHY_0_BITLANES        = 48'h3FE_3FE_3FE_2FF,
-   parameter PHY_1_BITLANES        = 48'h342_DFD_1F8_2E1,
+   parameter PHY_1_BITLANES        = 48'h342_9FD_1F8_2E1,
    parameter PHY_2_BITLANES        = 48'h3FE_3FE_3FE_2FF,
 
    // control/address/data pin mapping parameters
    parameter CK_BYTE_MAP
      = 144'h00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_00_11,
    parameter ADDR_MAP
-     = 192'h12A_113_138_126_120_107_125_117_131_139_124_12B_114_118_115_116,
+     = 192'h000_113_138_126_120_107_125_117_131_139_124_12B_114_118_115_116,
    parameter BANK_MAP   = 36'h127_106_123,
    parameter CAS_MAP    = 12'h128,
    parameter CKE_ODT_BYTE_MAP = 8'h00,

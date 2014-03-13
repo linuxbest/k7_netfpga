@@ -18,7 +18,7 @@
     <dci_hr_inouts_inputs>50 Ohms</dci_hr_inouts_inputs>
     <dci_cascade>0</dci_cascade>
     <Controller number="0" >
-	<MemoryDevice>DDR3_SDRAM/SODIMMs/MT8KTF51264HZ-1G6</MemoryDevice>
+	<MemoryDevice>DDR3_SDRAM/SODIMMs/MT4KTF25664HZ-1G9</MemoryDevice>
         <TimePeriod>1250</TimePeriod>
         <VccAuxIO>2.0V</VccAuxIO>
         <PHYRatio>4:1</PHYRatio>
@@ -36,7 +36,7 @@
         <Ordering>Normal</Ordering>
         <CustomPart>FALSE</CustomPart>
         <NewPartName></NewPartName>
-        <RowAddress>16</RowAddress>
+        <RowAddress>15</RowAddress>
         <ColAddress>10</ColAddress>
         <BankAddress>3</BankAddress>
         <MemoryVoltage>1.5V</MemoryVoltage>
