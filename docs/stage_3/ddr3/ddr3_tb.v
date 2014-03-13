@@ -56,7 +56,7 @@ module ddr3_tb (/*AUTOARG*/
 
    parameter DQ_WIDTH   = 64;
    parameter DQS_WIDTH  = 8;
-   parameter ROW_WIDTH  = 16;
+   parameter ROW_WIDTH  = 15;
    parameter BANK_WIDTH = 3;
    parameter DM_WIDTH   = 8;
    parameter CK_WIDTH   = 1;

@@ -1,4 +1,4 @@
-all: mig_7series_v1_9_readme.txt ddr3_tb.bit
+all: ddr3_tb.bit
 
 CGP=../coregen.cgp
 XCO=../mig_7series_v1_9.xco
@@ -15,7 +15,7 @@ clean:
 	rm -fr mig_*
 
 # NGC
-ddr3_tb.ngc: ../ddr3_tb.v ../example_inf.v 
+ddr3_tb.ngc: ../ddr3_tb.v ../example_inf.v mig_7series_v1_9_readme.txt
 	xst -ifn ../ddr3_tb_xst_opt.txt -ofn ddr3_tb_xst.syr -intstyle ise
 
 # TRANSLATE
