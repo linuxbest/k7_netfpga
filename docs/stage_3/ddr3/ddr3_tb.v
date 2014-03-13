@@ -59,10 +59,10 @@ module ddr3_tb (/*AUTOARG*/
    parameter ROW_WIDTH  = 16;
    parameter BANK_WIDTH = 3;
    parameter DM_WIDTH   = 8;
-   parameter CK_WIDTH   = 2;
-   parameter CKE_WIDTH  = 2;
+   parameter CK_WIDTH   = 1;
+   parameter CKE_WIDTH  = 1;
    parameter CS_WIDTH   = 1;
-   parameter ODT_WIDTH  = 2;
+   parameter ODT_WIDTH  = 1;
    parameter nCS_PER_RANK = 1;
 
    /*AUTOINPUT*/
