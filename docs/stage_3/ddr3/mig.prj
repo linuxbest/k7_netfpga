@@ -22,7 +22,7 @@
         <TimePeriod>2000</TimePeriod>
         <VccAuxIO>1.8V</VccAuxIO>
         <PHYRatio>4:1</PHYRatio>
-        <InputClkFreq>99.965</InputClkFreq>
+        <InputClkFreq>100</InputClkFreq>
         <UIExtraClocks>0</UIExtraClocks>
         <MMCMClkOut0> 1.000</MMCMClkOut0>
         <MMCMClkOut1>1</MMCMClkOut1>
