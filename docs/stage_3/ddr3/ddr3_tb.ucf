@@ -95,7 +95,7 @@ NET   "ddr3_dq[60]"                            LOC = "AK19"    |   IOSTANDARD = 
 NET   "ddr3_dq[61]"                            LOC = "AJ19"    |   IOSTANDARD = SSTL15_T_DCI         |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L7P_T1_32
 NET   "ddr3_dq[62]"                            LOC = "AE19"    |   IOSTANDARD = SSTL15_T_DCI         |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L10N_T1_32
 NET   "ddr3_dq[63]"                            LOC = "AD19"    |   IOSTANDARD = SSTL15_T_DCI         |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L10P_T1_32
-NET   "ddr3_addr[15]"                          LOC = "AC11"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L1N_T0_33
+#NET   "ddr3_addr[15]"                          LOC = "AC11"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L1N_T0_33
 NET   "ddr3_addr[14]"                          LOC = "AK11"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L1N_T0_33
 NET   "ddr3_addr[13]"                          LOC = "AB12"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L1N_T0_33
 NET   "ddr3_addr[12]"                          LOC = "AE8"     |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L8N_T1_33
