@@ -10,22 +10,22 @@
     <SystemClock>Differential</SystemClock>
     <BankSelectionFlag>FALSE</BankSelectionFlag>
     <InternalVref>0</InternalVref>
-    <dci_hr_inouts_inputs>40 Ohms</dci_hr_inouts_inputs>
+    <dci_hr_inouts_inputs>50 Ohms</dci_hr_inouts_inputs>
     <dci_cascade>1</dci_cascade>
     <Controller number="0" >
-        <MemoryDevice>DDR3_SDRAM/SODIMMs/MT8JTF12864HZ-1G6</MemoryDevice>
-        <TimePeriod>1250</TimePeriod>
-        <VccAuxIO>2.0V</VccAuxIO>
+       <MemoryDevice>DDR3_SDRAM/SODIMMs/MT8JTF25664HZ-1G4</MemoryDevice>
+        <TimePeriod>2000</TimePeriod>
+        <VccAuxIO>1.8V</VccAuxIO>
         <PHYRatio>4:1</PHYRatio>
         <InputClkFreq></InputClkFreq>
-        <DataWidth>8</DataWidth>
+        <DataWidth>64</DataWidth>
         <DeepMemory>1</DeepMemory>
         <DataMask>1</DataMask>
         <ECC>Disabled</ECC>
         <Ordering>Normal</Ordering>
         <CustomPart>TRUE</CustomPart>
         <NewPartName>CUSTOM</NewPartName>
-        <RowAddress>16</RowAddress>
+        <RowAddress>15</RowAddress>
         <ColAddress>10</ColAddress>
         <BankAddress>3</BankAddress>
 	<UserMemoryAddressMap>BANK_ROW_COLUMN</UserMemoryAddressMap>
@@ -161,24 +161,24 @@
             <Pin PADName="No connect" Bank="Select Bank" name="tg_compare_error" />
         </System_Control>
         <TimingParameters>
-            <Parameters twtr="7.5" trrd="5" trefi="7.8" tfaw="25" trtp="7.5" tcke="5" trfc="300" trp="13.91" tras="34" trcd="13.91" />
+            <Parameters twtr="7.5" trrd="6" trefi="7.8" tfaw="30" trtp="7.5" tcke="5.625" trfc="160" trp="13.125" tras="36" trcd="13.125" />
         </TimingParameters>
         <mrBurstLength name="Burst Length" >8 - Fixed</mrBurstLength>
         <mrBurstType name="Read Burst Type and Length" >Sequential</mrBurstType>
-        <mrCasLatency name="CAS Latency" >11</mrCasLatency>
+        <mrCasLatency name="CAS Latency" >7</mrCasLatency>
         <mrMode name="Mode" >Normal</mrMode>
         <mrDllReset name="DLL Reset" >No</mrDllReset>
         <mrPdMode name="DLL control for precharge PD" >Slow Exit</mrPdMode>
         <emrDllEnable name="DLL Enable" >Enable</emrDllEnable>
         <emrOutputDriveStrength name="Output Driver Impedance Control" >RZQ/7</emrOutputDriveStrength>
         <emrCSSelection name="Controller Chip Select Pin" >Enable</emrCSSelection>
-        <emrRTT name="RTT (nominal) - On Die Termination (ODT)" >RZQ/6</emrRTT>
+        <emrRTT name="RTT (nominal) - On Die Termination (ODT)" >RZQ/4</emrRTT>
         <emrPosted name="Additive Latency (AL)" >0</emrPosted>
         <emrOCD name="Write Leveling Enable" >Disabled</emrOCD>
         <emrDQS name="TDQS enable" >Enabled</emrDQS>
         <emrRDQS name="Qoff" >Output Buffer Enabled</emrRDQS>
         <mr2PartialArraySelfRefresh name="Partial-Array Self Refresh" >Full Array</mr2PartialArraySelfRefresh>
-        <mr2CasWriteLatency name="CAS write latency" >8</mr2CasWriteLatency>
+        <mr2CasWriteLatency name="CAS write latency" >6</mr2CasWriteLatency>
         <mr2AutoSelfRefresh name="Auto Self Refresh" >Enabled</mr2AutoSelfRefresh>
         <mr2SelfRefreshTempRange name="High Temparature Self Refresh Rate" >Normal</mr2SelfRefreshTempRange>
         <mr2RTTWR name="RTT_WR - Dynamic On Die Termination (ODT)" >Dynamic ODT off</mr2RTTWR>
