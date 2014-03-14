@@ -103,7 +103,7 @@ NET   "ddr3_addr[11]"                          LOC = "AD11"    |   IOSTANDARD = 
 NET   "ddr3_addr[10]"                          LOC = "AK14"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L20P_T3_33
 NET   "ddr3_addr[9]"                           LOC = "AD9"     |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L10P_T1_33
 NET   "ddr3_addr[8]"                           LOC = "AE10"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L14P_T2_SRCC_33
-NET   "ddr3_addr[7]"                           LOC = "AA13"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L6P_T0_33
+NET   "ddr3_addr[7]"                           LOC = "AH11"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L6P_T0_33
 NET   "ddr3_addr[6]"                           LOC = "AA12"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L1P_T0_33
 NET   "ddr3_addr[5]"                           LOC = "AE9"     |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L10N_T1_33
 NET   "ddr3_addr[4]"                           LOC = "AC12"    |   IOSTANDARD = SSTL15               |     VCCAUX_IO = HIGH        |     SLEW = FAST        ; # Pad function: IO_L9P_T1_DQS_33
