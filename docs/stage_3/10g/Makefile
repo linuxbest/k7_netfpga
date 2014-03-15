@@ -41,7 +41,7 @@ k7netfpga_ibert_10g.twr: k7netfpga_ibert_10g.ncd
 	trce -intstyle ise -v 3 -fastpaths -xml k7netfpga_ibert_10g $^ -o $@ k7netfpga_ibert_10g.pcf
 # bitgen
 k7netfpga_ibert_10g.bit: k7netfpga_ibert_10g.twr
-	bitgen -w -inststyle ise k7netfpga_ibert_10g.ncd
+	bitgen -w -intstyle ise k7netfpga_ibert_10g.ncd
 
 
 #############################
@@ -63,4 +63,4 @@ k7netfpga_ibert_1g.twr: k7netfpga_ibert_1g.ncd
 	trce -intstyle ise -v 3 -fastpaths -xml k7netfpga_ibert_1g $^ -o $@ k7netfpga_ibert_1g.pcf
 # bitgen
 k7netfpga_ibert_1g.bit: k7netfpga_ibert_1g.twr
-	bitgen -w -inststyle ise k7netfpga_ibert_1g.ncd
+	bitgen -w -intstyle ise k7netfpga_ibert_1g.ncd
