@@ -1,0 +1,3 @@
+verilog work "chipscope_ibert1g/example_design/example_chipscope_ibert1g_bb.v"
+verilog work "chipscope_ibert1g/example_design/example_chipscope_ibert1g.v"
+verilog work "k7netfpga_ibert_1g.v"
