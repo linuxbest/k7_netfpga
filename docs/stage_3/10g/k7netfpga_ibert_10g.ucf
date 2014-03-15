@@ -34,7 +34,7 @@
 TIMESPEC TS_J_CLK = PERIOD J_CLK 30 ns ;
 TIMESPEC TS_J_TO_D = FROM J_CLK TO D_CLK TIG ;
 TIMESPEC TS_D_TO_J = FROM D_CLK TO J_CLK TIG ;
-NET "U_CHIPSCOPE_IBERT10G/U0/U_IBERT_CORE/ma_dclk" TNM_NET = D_CLK ;
+NET "*U_CHIPSCOPE_IBERT10G/U0/U_IBERT_CORE/ma_dclk" TNM_NET = D_CLK ;
 
 #-------------------------------------------------------------------------------------
 # GT Clock Constraints 
@@ -91,7 +91,7 @@ NET Q3_CLK0_MGTREFCLK_N_IPAD LOC=C7;
 # RXOUTCLK OUTPUT PIN LOCs (if enabled) 
 #-------------------------------------------------------------------------------------
 
-NET TX_DISABLE[0] LOC = "";
-NET TX_DISABLE[1] LOC = "";
-NET TX_DISABLE[2] LOC = "";
-NET TX_DISABLE[3] LOC = "";
+NET TX_DISABLE[0] LOC = "M27";
+NET TX_DISABLE[1] LOC = "L27";
+NET TX_DISABLE[2] LOC = "K25";
+NET TX_DISABLE[3] LOC = "K21";
