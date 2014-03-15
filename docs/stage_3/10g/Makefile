@@ -6,3 +6,4 @@ example_%.bit: %.xco
 
 clean:
 	rm -fr chipscope_ibert*g chipscope_ibert_pcie_gen2 *.bit
+	rm -fr  *.asy *.txt *.gise *.ngc *.v *.veo *.xise *.tcl  *.lso *.pcf *.ncd *.pad *.csv *.mrp  *.log
