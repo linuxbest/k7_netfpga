@@ -1,0 +1,196 @@
+##############################################################
+#
+# Xilinx Core Generator version 14.6
+# Date: Sat Mar 15 04:19:08 2014
+#
+##############################################################
+#
+#  This file contains the customisation parameters for a
+#  Xilinx CORE Generator IP GUI. It is strongly recommended
+#  that you do not manually alter this file as it may cause
+#  unexpected and unsupported behavior.
+#
+##############################################################
+#
+#  Generated from component: xilinx.com:ip:chipscope_ibert_7series_gtx:2.02.a
+#
+##############################################################
+#
+# BEGIN Project Options
+SET addpads = false
+SET asysymbol = true
+SET busformat = BusFormatAngleBracketNotRipped
+SET createndf = false
+SET designentry = Verilog
+SET device = xc7k325t
+SET devicefamily = kintex7
+SET flowvendor = Other
+SET formalverification = false
+SET foundationsym = false
+SET implementationfiletype = Ngc
+SET package = ffg900
+SET removerpms = false
+SET simulationfiles = Structural
+SET speedgrade = -2
+SET verilogsim = true
+SET vhdlsim = false
+# END Project Options
+# BEGIN Select
+SELECT IBERT_7_Series_GTX_(ChipScope_Pro_-_IBERT) family Xilinx,_Inc. 2.02.a
+# END Select
+# BEGIN Parameters
+CSET add_rxoutclk_probes=false
+CSET board_config_settings=User_Defined
+CSET check_refclk_sources=true
+CSET check_refclk_sources_gt=true
+CSET component_name=chipscope_ibert10g
+CSET disable_sysclk_buf=false
+CSET enable_diff_term=false
+CSET generate_bit_stream=true
+CSET gt_correct=true
+CSET gt_naming_style=XmYn
+CSET no_of_quads=1
+CSET protocol_1=Name_Protocol
+CSET protocol_2=Name_Protocol
+CSET protocol_3=Name_Protocol
+CSET protocol_count=1
+CSET protocol_custom_1=10G_ETH
+CSET protocol_custom_2=Custom_2
+CSET protocol_custom_3=Custom_3
+CSET protocol_datawidth_1=40
+CSET protocol_datawidth_2=40
+CSET protocol_datawidth_3=40
+CSET protocol_gt_0=10G_ETH_/_10_Gbps
+CSET protocol_gt_1=10G_ETH_/_10_Gbps
+CSET protocol_gt_10=None
+CSET protocol_gt_11=None
+CSET protocol_gt_12=None
+CSET protocol_gt_13=None
+CSET protocol_gt_14=None
+CSET protocol_gt_15=None
+CSET protocol_gt_2=10G_ETH_/_10_Gbps
+CSET protocol_gt_3=10G_ETH_/_10_Gbps
+CSET protocol_gt_4=None
+CSET protocol_gt_5=None
+CSET protocol_gt_6=None
+CSET protocol_gt_7=None
+CSET protocol_gt_8=None
+CSET protocol_gt_9=None
+CSET protocol_gt_count_1=4
+CSET protocol_gt_count_2=0
+CSET protocol_gt_count_3=0
+CSET protocol_maxlinerate_1=10
+CSET protocol_maxlinerate_2=3.125
+CSET protocol_maxlinerate_3=3.125
+CSET protocol_quad_0=None
+CSET protocol_quad_1=None
+CSET protocol_quad_10=None
+CSET protocol_quad_11=None
+CSET protocol_quad_12=None
+CSET protocol_quad_13=None
+CSET protocol_quad_14=None
+CSET protocol_quad_15=None
+CSET protocol_quad_2=None
+CSET protocol_quad_3=None
+CSET protocol_quad_4=None
+CSET protocol_quad_5=None
+CSET protocol_quad_6=None
+CSET protocol_quad_7=None
+CSET protocol_quad_8=None
+CSET protocol_quad_9=None
+CSET protocol_rxrefclk_frequency_1=156.250
+CSET protocol_rxrefclk_frequency_2=156.250
+CSET protocol_rxrefclk_frequency_3=390.625
+CSET protocol_use_quad_pll_1=true
+CSET protocol_use_quad_pll_2=true
+CSET protocol_use_quad_pll_3=true
+CSET quad_pll_gt_0=true
+CSET quad_pll_gt_1=true
+CSET quad_pll_gt_10=true
+CSET quad_pll_gt_11=true
+CSET quad_pll_gt_12=true
+CSET quad_pll_gt_13=true
+CSET quad_pll_gt_14=true
+CSET quad_pll_gt_15=true
+CSET quad_pll_gt_2=true
+CSET quad_pll_gt_3=true
+CSET quad_pll_gt_4=true
+CSET quad_pll_gt_5=true
+CSET quad_pll_gt_6=true
+CSET quad_pll_gt_7=true
+CSET quad_pll_gt_8=true
+CSET quad_pll_gt_9=true
+CSET quad_pll_quad_0=true
+CSET quad_pll_quad_1=true
+CSET quad_pll_quad_10=true
+CSET quad_pll_quad_11=true
+CSET quad_pll_quad_12=true
+CSET quad_pll_quad_13=true
+CSET quad_pll_quad_14=true
+CSET quad_pll_quad_15=true
+CSET quad_pll_quad_2=true
+CSET quad_pll_quad_3=true
+CSET quad_pll_quad_4=true
+CSET quad_pll_quad_5=true
+CSET quad_pll_quad_6=true
+CSET quad_pll_quad_7=true
+CSET quad_pll_quad_8=true
+CSET quad_pll_quad_9=true
+CSET refclk_source_gt_0=MGTREFCLK0_118
+CSET refclk_source_gt_1=MGTREFCLK0_118
+CSET refclk_source_gt_10=None
+CSET refclk_source_gt_11=None
+CSET refclk_source_gt_12=None
+CSET refclk_source_gt_13=None
+CSET refclk_source_gt_14=None
+CSET refclk_source_gt_15=None
+CSET refclk_source_gt_2=MGTREFCLK0_118
+CSET refclk_source_gt_3=MGTREFCLK0_118
+CSET refclk_source_gt_4=None
+CSET refclk_source_gt_5=None
+CSET refclk_source_gt_6=None
+CSET refclk_source_gt_7=None
+CSET refclk_source_gt_8=None
+CSET refclk_source_gt_9=None
+CSET refclk_source_quad_0=None
+CSET refclk_source_quad_1=None
+CSET refclk_source_quad_10=None
+CSET refclk_source_quad_11=None
+CSET refclk_source_quad_12=None
+CSET refclk_source_quad_13=None
+CSET refclk_source_quad_14=None
+CSET refclk_source_quad_15=None
+CSET refclk_source_quad_2=None
+CSET refclk_source_quad_3=None
+CSET refclk_source_quad_4=None
+CSET refclk_source_quad_5=None
+CSET refclk_source_quad_6=None
+CSET refclk_source_quad_7=None
+CSET refclk_source_quad_8=None
+CSET refclk_source_quad_9=None
+CSET rxoutclk_gtx_location=X0Y12
+CSET rxoutclk_is_dif=false
+CSET rxoutclk_n_pin_location=UNASSIGNED
+CSET rxoutclk_pin_location=UNASSIGNED
+CSET rxoutclk_pin_std=LVCMOS25
+CSET select_mode=gb
+CSET select_quad_1=QUAD_118
+CSET select_quad_2=None
+CSET select_quad_3=None
+CSET select_quad_4=None
+CSET silicon_version=Production
+CSET sysclk_frequency=100
+CSET sysclk_frequency_int=156.250
+CSET sysclk_io_pin_loc_n=UNASSIGNED
+CSET sysclk_io_pin_loc_p=UNASSIGNED
+CSET sysclk_io_pin_std=LVCMOS25
+CSET sysclk_is_dif=false
+CSET sysclk_mode_external=false
+CSET sysclock_source_int=X0Y15
+CSET target_design_platform=User_Defined
+# END Parameters
+# BEGIN Extra information
+MISC pkg_timestamp=2013-06-08T17:32:02Z
+# END Extra information
+GENERATE
+# CRC: e06e9039
