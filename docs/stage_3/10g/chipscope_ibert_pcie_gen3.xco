@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.6
-# Date: Sat Mar 15 05:29:28 2014
+# Date: Sat Mar 15 06:27:46 2014
 #
 ##############################################################
 #
@@ -180,7 +180,7 @@ CSET select_quad_3=None
 CSET select_quad_4=None
 CSET silicon_version=Production
 CSET sysclk_frequency=100
-CSET sysclk_frequency_int=100.000
+CSET sysclk_frequency_int=156.25
 CSET sysclk_io_pin_loc_n=UNASSIGNED
 CSET sysclk_io_pin_loc_p=AG10
 CSET sysclk_io_pin_std=LVCMOS15
@@ -193,4 +193,4 @@ CSET target_design_platform=User_Defined
 MISC pkg_timestamp=2013-06-08T17:32:02Z
 # END Extra information
 GENERATE
-# CRC: 6502a75e
+# CRC: c8bd0f94
