@@ -189,6 +189,7 @@ BEGIN microblaze
  BUS_INTERFACE ILMB = microblaze_0_ilmb
  PORT MB_RESET = proc_sys_reset_0_MB_Reset
  PORT CLK = clk_100_0000MHzPLLE0
+ PORT INTERRUPT = microblaze_0_irq
 END
 
 BEGIN mdm
@@ -260,6 +261,7 @@ BEGIN axi_intc
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT S_AXI_ACLK = clk_100_0000MHzPLLE0
  PORT Intr = debug_module_Interrupt & axi_cdma_0_cdma_introut & RS232_Uart_1_Interrupt & PCI_Express_interrupt_out & IIC_DDR3_IIC2INTC_Irpt & Ethernet_Lite_IP2INTC_Irpt & axi_timer_0_Interrupt
+ PORT Irq = microblaze_0_irq
 END
 
 BEGIN axi_cdma
