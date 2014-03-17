@@ -25,8 +25,8 @@
  PORT xps_ethernetlite_0_50_O_pin = clk_50_0000MHzPLLE0, DIR = O, SIGIS = CLK
  PORT xps_ethernetlite_0_50_I_pin = clk_50_0000MHz, DIR = I, SIGIS = CLK
  PORT xps_ethernetlite_0_PHY_rst_n_pin = xps_ethernetlite_0_PHY_rst_n, DIR = O
-# PORT xps_ethernetlite_0_PHY_MDC_pin = xps_ethernetlite_0_PHY_MDC, DIR = O
-# PORT xps_ethernetlite_0_PHY_MDIO_pin = xps_ethernetlite_0_PHY_MDIO, DIR = IO
+ PORT xps_ethernetlite_0_PHY_MDC_pin = xps_ethernetlite_0_PHY_MDC, DIR = O
+ PORT xps_ethernetlite_0_PHY_MDIO_pin = xps_ethernetlite_0_PHY_MDIO, DIR = IO
  PORT xps_ethernetlite_0_PWRDOWN_pin = net_vcc, DIR = O
 # DDR3
  PORT c0_ddr3_reset_n = ddr_memory_ddr3_rst, DIR = O
@@ -428,16 +428,16 @@ END
 BEGIN axi_ethernetlite
  PARAMETER INSTANCE = Ethernet_Lite
  PARAMETER HW_VER = 1.01.b
-# PARAMETER C_DUPLEX = 1
-# PARAMETER C_RX_PING_PONG = 1
-# PARAMETER C_TX_PING_PONG = 1
- PARAMETER C_INCLUDE_MDIO = 0
+ PARAMETER C_DUPLEX = 1
+ PARAMETER C_RX_PING_PONG = 1
+ PARAMETER C_TX_PING_PONG = 1
+ PARAMETER C_INCLUDE_MDIO = 1
  PARAMETER C_BASEADDR = 0x40e00000
  PARAMETER C_HIGHADDR = 0x40e0ffff
  BUS_INTERFACE S_AXI = axi4lite_0
  PORT S_AXI_ACLK = clk_100_0000MHzPLLE0
-# PORT PHY_MDIO = Ethernet_Lite_MDIO
-# PORT PHY_MDC = Ethernet_Lite_MDC
+ PORT PHY_MDIO = xps_ethernetlite_0_PHY_MDIO
+ PORT PHY_MDC = xps_ethernetlite_0_PHY_MDC
  PORT PHY_rst_n = xps_ethernetlite_0_PHY_rst_n
  PORT PHY_tx_clk = mii_to_rmii_0_Rmii2Mac_tx_clk
  PORT PHY_rx_clk = mii_to_rmii_0_Rmii2Mac_rx_clk

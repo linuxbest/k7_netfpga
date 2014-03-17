@@ -8,13 +8,13 @@ NET "CLK_100MHz" TNM_NET = sys_clk_pin;
 TIMESPEC TS_sys_clk_pin = PERIOD sys_clk_pin 100000 kHz;
 
 # Ethernet Lite RMII 
-Net xps_ethernetlite_0_50_O_pin       LOC=AG29  | IOSTANDARD = LVCMOS25;
-Net xps_ethernetlite_0_50_I_pin       LOC=AB27  | IOSTANDARD = LVCMOS25;
+Net xps_ethernetlite_0_50_O_pin       LOC=AG29 | IOSTANDARD = LVCMOS25;
+Net xps_ethernetlite_0_50_I_pin       LOC=AB27 | IOSTANDARD = LVCMOS25;
 
-Net xps_ethernetlite_0_PHY_rst_n_pin  LOC=Y30   | IOSTANDARD = LVCMOS25;
-Net xps_ethernetlite_0_PWRDOWN_pin    LOC=AC30  | IOSTANDARD = LVCMOS25;
-#Net xps_ethernetlite_0_PHY_MDIO_pin   LOC=AB29 | IOSTANDARD = LVCMOS25;
-#Net xps_ethernetlite_0_PHY_MDC_pin    LOC=AE29 | IOSTANDARD = LVCMOS25;
+Net xps_ethernetlite_0_PHY_rst_n_pin  LOC=Y30  | IOSTANDARD = LVCMOS25;
+Net xps_ethernetlite_0_PWRDOWN_pin    LOC=AC30 | IOSTANDARD = LVCMOS25;
+Net xps_ethernetlite_0_PHY_MDIO_pin   LOC=AB29 | IOSTANDARD = LVCMOS25;
+Net xps_ethernetlite_0_PHY_MDC_pin    LOC=AE29 | IOSTANDARD = LVCMOS25;
 
 Net mii_to_rmii_0_Rmii2Phy_tx_en_pin  LOC=AH29 | IOSTANDARD = LVCMOS25;
 Net mii_to_rmii_0_Rmii2Phy_txd_pin<0> LOC=AK29 | IOSTANDARD = LVCMOS25;
@@ -75,7 +75,6 @@ NET Linear_Flash_address[23] LOC = "V24"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[24] LOC = "W21"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_address[25] LOC = "W22"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_adv_ldn     LOC = "M30"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_ce_n        LOC = "U19"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_data[0]     LOC = "R26"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_data[1]     LOC = "P26"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_data[2]     LOC = "T30"  |  IOSTANDARD = "LVCMOS25";
@@ -93,8 +92,9 @@ NET Linear_Flash_data[13]    LOC = "R20"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_data[14]    LOC = "R25"  |  IOSTANDARD = "LVCMOS25";
 NET Linear_Flash_data[15]    LOC = "P24"  |  IOSTANDARD = "LVCMOS25";
 
-NET Linear_Flash_oe_n        LOC = "M24"  |  IOSTANDARD = "LVCMOS25";
-NET Linear_Flash_we_n        LOC = "M25"  |  IOSTANDARD = "LVCMOS25";
+NET Linear_Flash_oe_n        LOC = "M24"  |  IOSTANDARD = "LVCMOS25" | PULLUP;
+NET Linear_Flash_we_n        LOC = "M25"  |  IOSTANDARD = "LVCMOS25" | PULLUP;
+NET Linear_Flash_ce_n        LOC = "U19"  |  IOSTANDARD = "LVCMOS25" | PULLUP;
 
 # RS 232
 NET RS232_Uart_1_sin  LOC = "AF26"  |  IOSTANDARD = "LVCMOS25";
