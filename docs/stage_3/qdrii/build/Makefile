@@ -24,11 +24,11 @@ qdr_tb.ngd: qdr_tb.ngc ../qdr_tb.ucf
 
 # MAP
 qdr_tb_map.ncd: qdr_tb.ngd
-	map -intstyle ise -p ${DEV} -w -ol high -xe n -register_duplication off -ir off -pr off -lc off -power off -o qdr_tb_map.ncd qdr_tb.ngd qdr_tb.pcf
+	map -intstyle ise -p ${DEV} -w -pr b -ol high -timing -detail -o qdr_tb_map.ncd qdr_tb.ngd qdr_tb.pcf
 
 # PAR
 qdr_tb.ncd: qdr_tb_map.ncd
-	par -w -intstyle ise -ol high -xe n qdr_tb_map.ncd qdr_tb.ncd qdr_tb.pcf
+	par -w -intstyle ise -ol high qdr_tb_map.ncd qdr_tb.ncd qdr_tb.pcf
 
 # TRACE
 qdr_tb.twr: qdr_tb.ncd

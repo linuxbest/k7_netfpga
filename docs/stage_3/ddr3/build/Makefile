@@ -24,11 +24,11 @@ ddr3_tb.ngd: ddr3_tb.ngc ../ddr3_tb.ucf
 
 # MAP
 ddr3_tb_map.ncd: ddr3_tb.ngd
-	map -intstyle ise -p ${DEV} -w -ol high -xe n -register_duplication off -ir off -pr off -lc off -power off -o ddr3_tb_map.ncd ddr3_tb.ngd ddr3_tb.pcf
+	map -intstyle ise -p ${DEV} -w -pr b -ol high -timing -detail -o ddr3_tb_map.ncd ddr3_tb.ngd ddr3_tb.pcf
 
 # PAR
 ddr3_tb.ncd: ddr3_tb_map.ncd
-	par -w -intstyle ise -ol high -xe n ddr3_tb_map.ncd ddr3_tb.ncd ddr3_tb.pcf
+	par -w -intstyle ise -ol high ddr3_tb_map.ncd ddr3_tb.ncd ddr3_tb.pcf
 
 # TRACE
 ddr3_tb.twr: ddr3_tb.ncd
