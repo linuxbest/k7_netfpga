@@ -40,8 +40,8 @@ TIMESPEC "TS_capt_clk_n" = PERIOD "TNM_capt_clk_n" 2 ns;
 #   placed at an optimal clock IOB / PLL site pair.
 # This warning can be ignored.  See the Users Guide for more information.
 
-#NET "sys_clk_i" CLOCK_DEDICATED_ROUTE = BACKBONE;
-#PIN "*/u_infrastructure/plle2_i.CLKIN1" CLOCK_DEDICATED_ROUTE = BACKBONE;
+NET "sys_clk" CLOCK_DEDICATED_ROUTE = BACKBONE;
+PIN "*/u_infrastructure/plle2_i.CLKIN1" CLOCK_DEDICATED_ROUTE = BACKBONE;
             
 
 ############## NET - IOSTANDARD ##################
@@ -151,7 +151,7 @@ NET   "qdriip_k_p[0]"                          LOC = "B27"     |   IOSTANDARD = 
 NET   "qdriip_k_n[0]"                          LOC = "A27"     |   IOSTANDARD = DIFF_HSTL_I          |     SLEW = FAST        ; # Pad function: IO_L7N_T1_16
 
 
-NET   "sys_clk"                                LOC = "AG10"    |   IOSTANDARD = HSTL_I;
+NET   "sys_clk"                                LOC = "AB27"    |   IOSTANDARD = HSTL_I;
 NET   "sys_rst"                                LOC = "AK10"    |   IOSTANDARD = HSTL_I | PULLUP;
 NET   "tg_compare_error"                       LOC = "AF12"    |   IOSTANDARD = HSTL_I;
 NET   "init_calib_complete"                    LOC = "AG12"    |   IOSTANDARD = HSTL_I;
@@ -190,7 +190,7 @@ INST "*/qdr_rld_phy_4lanes_2.u_qdr_rld_phy_4lanes/phaser_ref_i" LOC=PHASER_REF_X
 INST "*/qdr_rld_phy_4lanes_1.u_qdr_rld_phy_4lanes/phaser_ref_i" LOC=PHASER_REF_X0Y5;
 INST "*/qdr_rld_phy_4lanes_0.u_qdr_rld_phy_4lanes/phaser_ref_i" LOC=PHASER_REF_X0Y6;
 
-#INST "*/u_infrastructure/plle2_i" LOC=PLLE2_ADV_X0Y4;
-#INST "*/u_infrastructure/gen_mmcm.mmcm_i" LOC=MMCME2_ADV_X0Y4;
+INST "*/u_infrastructure/plle2_i" LOC=PLLE2_ADV_X0Y4;
+INST "*/u_infrastructure/gen_mmcm.mmcm_i" LOC=MMCME2_ADV_X0Y4;
 
 
