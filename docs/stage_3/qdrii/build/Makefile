@@ -15,7 +15,7 @@ clean:
 	rm -fr mig_*
 
 # NGC
-qdr_tb.ngc: ../qdr_tb.v ../example_inf.v 
+qdr_tb.ngc: ../qdr_tb.v ../example_inf.v mig_7series_v1_9_readme.txt
 	xst -ifn ../qdr_tb_xst_opt.txt -ofn qdr_tb_xst.syr -intstyle ise
 
 # TRANSLATE
