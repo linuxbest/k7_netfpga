@@ -17,6 +17,12 @@ eval add wave -noupdate $hexopt /tb${ps}qdriip_bw_n
 eval add wave -noupdate $hexopt /tb${ps}qdriip_q
 eval add wave -noupdate $hexopt /tb${ps}qdriip_d
 
+eval add wave -noupdate -divider {"u_mig_7series_v1_9"}
+eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}rstdiv0
+eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}clk
+eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}mem_refclk
+eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}sync_pulse
+
 
 # Wave window configuration information
 #

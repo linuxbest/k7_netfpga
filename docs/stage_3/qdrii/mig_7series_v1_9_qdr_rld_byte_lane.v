@@ -1211,7 +1211,7 @@ generate
 	  (
 	   .DDR_CLK_EDGE ("SAME_EDGE")
 	  )ddr_dk (
-        .C    (phy_clk_fast), 
+        .C    (skewd_oserdes_clk_delayed), 
         .R    (1'b0),
         .S    (),
         .D1   (DK_VALUE_D1),

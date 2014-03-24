@@ -24,7 +24,6 @@ verilog work mig_7series_v1_9/example_design//../user_design/rtl/clocking/mig_7s
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/clocking/mig_7series_v1_9_iodelay_ctrl.v
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_byte_lane_map.v
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_defs.v
-verilog work mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_top.v
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_write_control_io.v
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_write_data_io.v
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_write_init_sm.v
@@ -47,3 +46,4 @@ verilog work mig_7series_v1_9/example_design//../user_design/rtl/mig_7series_v1_
 verilog work ../qdr_tb.v
 verilog work ../example_inf.v
 verilog work ../mig_7series_v1_9_qdr_rld_byte_lane.v
+verilog work ../mig_7series_v1_9_qdr_phy_top.v
