@@ -59,7 +59,7 @@ module tb;
    wire        sys_rst;
 
    wire        init_calib_complete;
-   wire [7:0]  qdriip_bw_n;
+   wire [3:0]  qdriip_bw_n;
    wire        qdriip_dll_off_n;
    wire [0:0]  qdriip_k_p;
    wire [0:0]  qdriip_k_n;
@@ -88,7 +88,36 @@ module tb;
 		  .sys_clk		(sys_clk),
 		  .sys_rst		(sys_rst));
 
+   defparam qdr_tb.example_top.SIM_BYPASS_INIT_CAL = "FAST";
+   defparam qdr_tb.example_top.SIMULATION          = "TRUE";
 
+   cyqdr2_b4 
+     cyqdr2_b4  (
+		 // Outputs
+		 .TDO			(),
+		 .QVLD			(),
+		 // Inouts
+		 .CQ			(qdriip_cq_p),
+		 .CQb			(qdriip_cq_n),
+		 .Q			(qdriip_q),
+		 // Inputs
+		 .TCK			(1'b0),
+		 .TMS			(1'b0),
+		 .TDI			(1'b0),
+		 .D			(qdriip_d),
+		 .K			(qdriip_k_p),
+		 .Kb			(qdriip_k_n),
+		 .RPSb			(qdriip_r_n),
+		 .WPSb			(qdriip_w_n),
+		 .BWS0b			(qdriip_bw_n[0]),
+		 .BWS1b			(qdriip_bw_n[1]),
+		 .BWS2b			(qdriip_bw_n[2]),
+		 .BWS3b			(qdriip_bw_n[3]),
+		 .ZQ			(1'b0),
+		 .ODT			(1'b0),
+		 .DOFF			(qdriip_dll_off_n),
+		 .A			(qdriip_sa[17:0]));
+   
    reg 	       reset_n;
    reg 	       clock;
    initial begin
@@ -107,7 +136,7 @@ module tb;
 endmodule // tb
 
 // Local Variables:
-// verilog-library-directories:("../")
+// verilog-library-directories:("../" ".")
 // verilog-library-files:(".")
 // verilog-library-extensions:(".v" ".h")
 // End:

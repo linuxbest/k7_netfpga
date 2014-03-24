@@ -2,6 +2,7 @@
 vlib work
 
 vlog tb.v
+vlog cyqdr2_b4.v
 
 vlog ../build/mig_7series_v1_9/example_design//rtl/traffic_gen/mig_7series_v1_9_afifo.v
 vlog ../build/mig_7series_v1_9/example_design//rtl/traffic_gen/mig_7series_v1_9_cmd_gen.v
@@ -31,7 +32,6 @@ vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7serie
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_defs.v
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_write_control_io.v
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_write_data_io.v
-vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_write_init_sm.v
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_write_top.v
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_rld_byte_group_io.v
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_rld_if_post_fifo.v
@@ -52,6 +52,7 @@ vlog ../build/../qdr_tb.v
 vlog ../build/../example_inf.v
 vlog ../build/../mig_7series_v1_9_qdr_rld_byte_lane.v
 vlog ../build/../mig_7series_v1_9_qdr_phy_top.v
+vlog ../build/../mig_7series_v1_9_qdr_phy_write_init_sm.v
 
 vlog  -incr $env(XILINX)/verilog/src/glbl.v
 
