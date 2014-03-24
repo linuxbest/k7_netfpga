@@ -1,7 +1,7 @@
 ##############################################################
 #
 # Xilinx Core Generator version 14.6
-# Date: Sat Mar 15 06:43:39 2014
+# Date: Fri Mar 21 15:33:49 2014
 #
 ##############################################################
 #
@@ -168,13 +168,13 @@ CSET refclk_source_quad_6=None
 CSET refclk_source_quad_7=None
 CSET refclk_source_quad_8=None
 CSET refclk_source_quad_9=None
-CSET rxoutclk_gtx_location=X0Y12
+CSET rxoutclk_gtx_location=X0Y8
 CSET rxoutclk_is_dif=false
 CSET rxoutclk_n_pin_location=UNASSIGNED
 CSET rxoutclk_pin_location=UNASSIGNED
 CSET rxoutclk_pin_std=LVCMOS25
 CSET select_mode=gb
-CSET select_quad_1=QUAD_118
+CSET select_quad_1=QUAD_117
 CSET select_quad_2=None
 CSET select_quad_3=None
 CSET select_quad_4=None
@@ -186,11 +186,11 @@ CSET sysclk_io_pin_loc_p=AG10
 CSET sysclk_io_pin_std=LVCMOS15
 CSET sysclk_is_dif=false
 CSET sysclk_mode_external=true
-CSET sysclock_source_int=X0Y12
+CSET sysclock_source_int=X0Y8
 CSET target_design_platform=User_Defined
 # END Parameters
 # BEGIN Extra information
 MISC pkg_timestamp=2013-06-08T17:32:02Z
 # END Extra information
 GENERATE
-# CRC: 4781ee55
+# CRC: efc7f7a4
