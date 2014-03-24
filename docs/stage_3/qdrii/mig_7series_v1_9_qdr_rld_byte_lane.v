@@ -1150,7 +1150,7 @@ mig_7series_v1_9_qdr_rld_byte_group_io   #
    .oserdes_dqts_in          (oserdes_dqts_in)
     );
 
-    localparam USE_OSD = 1;
+	localparam USE_OSD = 0;
 //We can only generate one clock type per byte lane
 //invalid to have both CK and DK options selected for a given byte lane
 

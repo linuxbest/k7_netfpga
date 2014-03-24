@@ -68,6 +68,7 @@ module tb;
    wire [35:0] qdriip_d;
    wire [17:0] qdriip_sa;
    wire        tg_compare_error;
+   wire        qdriip_qvld;
    
    qdr_tb qdr_tb (/*AUTOINST*/
 		  // Outputs
@@ -95,14 +96,14 @@ module tb;
      cyqdr2_b4  (
 		 // Outputs
 		 .TDO			(),
-		 .QVLD			(),
+		 .QVLD			(qdriip_qvld),
 		 // Inouts
 		 .CQ			(qdriip_cq_p),
 		 .CQb			(qdriip_cq_n),
 		 .Q			(qdriip_q),
 		 // Inputs
 		 .TCK			(1'b0),
-		 .TMS			(1'b0),
+		 .TMS			(1'b1),
 		 .TDI			(1'b0),
 		 .D			(qdriip_d),
 		 .K			(qdriip_k_p),

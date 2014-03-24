@@ -20,6 +20,7 @@ eval add wave -noupdate $hexopt /tb${ps}qdriip_d
 eval add wave -noupdate $binopt /tb${ps}qdriip_cq_p
 eval add wave -noupdate $binopt /tb${ps}qdriip_cq_n
 eval add wave -noupdate $hexopt /tb${ps}qdriip_q
+eval add wave -noupdate $binopt /tb${ps}qdriip_qvld
 
 eval add wave -noupdate $binopt /tb${ps}qdriip_dll_off_n
 
