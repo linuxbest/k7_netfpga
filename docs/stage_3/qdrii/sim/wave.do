@@ -28,6 +28,7 @@ eval add wave -noupdate -divider {"u_mig_7series_v1_9"}
 eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}rstdiv0
 eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}clk
 eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}mem_refclk
+eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}ddr_refclk
 eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}sync_pulse
 
 eval add wave -noupdate -divider {"ck p i"}
@@ -35,6 +36,7 @@ set osd "/tb/qdr_tb/example_top/u_mig_7series_v1_9/u_qdr_phy_top/u_qdr_rld_mc_ph
 eval add wave -noupdate $binopt ${osd}skewd_oserdes_clk
 eval add wave -noupdate $binopt ${osd}skewd_oserdes_clkdiv
 eval add wave -noupdate $binopt ${osd}mem_refclk
+eval add wave -noupdate $binopt ${osd}phy_clk_fast
 eval add wave -noupdate $binopt ${osd}os_rst
 eval add wave -noupdate $binopt ${osd}skewd_oserdes_clk_delayed
 eval add wave -noupdate $binopt ${osd}ddr_ck_out_q

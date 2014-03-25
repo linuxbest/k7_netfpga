@@ -20,7 +20,6 @@ verilog work mig_7series_v1_9/example_design//rtl/mig_7series_v1_9_chk_win_top.v
 verilog work mig_7series_v1_9/example_design//rtl/qdr_rld_chipscope.v
 verilog work mig_7series_v1_9/example_design//rtl/example_top.v
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/clocking/mig_7series_v1_9_clk_ibuf.v
-verilog work mig_7series_v1_9/example_design//../user_design/rtl/clocking/mig_7series_v1_9_infrastructure.v
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/clocking/mig_7series_v1_9_iodelay_ctrl.v
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_byte_lane_map.v
 verilog work mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_defs.v
@@ -47,3 +46,4 @@ verilog work ../example_inf.v
 verilog work ../mig_7series_v1_9_qdr_rld_byte_lane.v
 verilog work ../mig_7series_v1_9_qdr_phy_top.v
 verilog work ../mig_7series_v1_9_qdr_phy_write_init_sm.v
+verilog work ../mig_7series_v1_9_infrastructure.v

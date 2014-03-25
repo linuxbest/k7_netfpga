@@ -26,7 +26,6 @@ vlog ../build/mig_7series_v1_9/example_design//rtl/mig_7series_v1_9_chk_win_top.
 vlog ../build/mig_7series_v1_9/example_design//rtl/qdr_rld_chipscope.v
 vlog ../build/mig_7series_v1_9/example_design//rtl/example_top.v
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/clocking/mig_7series_v1_9_clk_ibuf.v
-vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/clocking/mig_7series_v1_9_infrastructure.v
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/clocking/mig_7series_v1_9_iodelay_ctrl.v
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_byte_lane_map.v
 vlog ../build/mig_7series_v1_9/example_design//../user_design/rtl/phy/mig_7series_v1_9_qdr_phy_defs.v
@@ -53,6 +52,7 @@ vlog ../build/../example_inf.v
 vlog ../build/../mig_7series_v1_9_qdr_rld_byte_lane.v
 vlog ../build/../mig_7series_v1_9_qdr_phy_top.v
 vlog ../build/../mig_7series_v1_9_qdr_phy_write_init_sm.v
+vlog ../build/../mig_7series_v1_9_infrastructure.v
 
 vlog  -incr $env(XILINX)/verilog/src/glbl.v
 
