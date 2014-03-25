@@ -1150,7 +1150,7 @@ mig_7series_v1_9_qdr_rld_byte_group_io   #
    .oserdes_dqts_in          (oserdes_dqts_in)
     );
 
-	localparam USE_OSD = 2;
+	localparam USE_OSD = 3;
 //We can only generate one clock type per byte lane
 //invalid to have both CK and DK options selected for a given byte lane
 
@@ -1206,7 +1206,7 @@ generate
       OBUFT ddr_ck_p_obuf (.I(ddr_ck_out_q[0]), .O(ddr_ck_out[0]), .T(1'b0) );
       OBUFT ddr_ck_n_obuf (.I(ddr_ck_out_q[1]), .O(ddr_ck_out[1]), .T(1'b0) );
     end
-  end else if ( GENERATE_DDR_DK == 1 && USE_OSD == 1) begin : gen_ddr_osd2_dk //OSERDESE2 for QDR CK
+  end else if ( GENERATE_DDR_DK == 1 && USE_OSD == 1) begin : gen_ddr_1dk //OSERDESE2 for QDR CK
 	      OSERDESE2 #( .DATA_RATE_OQ       ("DDR"),
 			   .DATA_RATE_TQ       ("DDR"),
 			   .DATA_WIDTH         (4),
@@ -1247,7 +1247,7 @@ generate
 			    .TCE               (1'b1));
       OBUFDS ddr_ck_obuf  (.I(ddr_ck_out_q[0]), //ddr_ck_out_q[0]
                            .O(ddr_ck_out[0]), .OB(ddr_ck_out[1]));
-  end else if ( GENERATE_DDR_DK == 1 && USE_OSD == 2) begin : gen_ddr_dk //original QDR case
+  end else if ( GENERATE_DDR_DK == 1 && USE_OSD == 2) begin : gen_ddr_2dk //original QDR case
       ODDR  # ( .DDR_CLK_EDGE ("SAME_EDGE"))
       ddr_dk (
         .C    (phy_clk_fast), 
@@ -1256,11 +1256,24 @@ generate
         .D1   (DK_VALUE_D1),
         .D2   (~DK_VALUE_D1),
         .CE   (1'b1),
-        .Q    (ddr_dk_out_q[0])
+        .Q    (ddr_ck_out_q[0])
       );
-      OBUFDS ddr_ck_obuf  (.I(ddr_dk_out_q[0]), //ddr_dk_out_q[0]
+      OBUFDS ddr_ck_obuf  (.I(ddr_ck_out_q[0]), //ddr_dk_out_q[0]
                            .O(ddr_ck_out[0]), .OB(ddr_ck_out[1]));
-  end else if ( GENERATE_DDR_DK == 1 && USE_OSD == 0) begin : gen_ddr_dk //original QDR case
+  end else if ( GENERATE_DDR_DK == 1 && USE_OSD == 3) begin : gen_ddr_3dk //original QDR case
+      ODDR  # ( .DDR_CLK_EDGE ("SAME_EDGE"))
+      ddr_dk (
+        .C    (oserdes_clk), 
+        .R    (1'b0),
+        .S    (),
+        .D1   (DK_VALUE_D1),
+        .D2   (~DK_VALUE_D1),
+        .CE   (1'b1),
+        .Q    (ddr_ck_out_q[0])
+      );
+      OBUFDS ddr_ck_obuf  (.I(ddr_ck_out_q[0]), //ddr_dk_out_q[0]
+                           .O(ddr_ck_out[0]), .OB(ddr_ck_out[1]));
+  end else if ( GENERATE_DDR_DK == 1 && USE_OSD == 0) begin : gen_ddr_0dk //original QDR case
     if (DIFF_DK == 1) begin: gen_diff_ddr_dk
       ODDR  #
 	  (

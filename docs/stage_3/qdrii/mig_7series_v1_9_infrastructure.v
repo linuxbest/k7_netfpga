@@ -274,7 +274,7 @@ module mig_7series_v1_9_infrastructure #
      .CLKOUT4_DUTY_CYCLE (0.500),
      .CLKOUT4_PHASE      (CLKOUT4_PHASE),
      .CLKOUT5_DUTY_CYCLE (0.500),
-     .CLKOUT5_PHASE      (160.000),
+     .CLKOUT5_PHASE      (157.500),
      .REF_JITTER1        (0.010),
      .REF_JITTER2        (0.010)
      )
