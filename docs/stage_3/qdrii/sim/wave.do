@@ -34,6 +34,7 @@ eval add wave -noupdate -divider {"ck p i"}
 set osd "/tb/qdr_tb/example_top/u_mig_7series_v1_9/u_qdr_phy_top/u_qdr_rld_mc_phy/qdr_rld_phy_4lanes_2/u_qdr_rld_phy_4lanes/qdr_rld_byte_lane_C/qdr_rld_byte_lane_C/"
 eval add wave -noupdate $binopt ${osd}skewd_oserdes_clk
 eval add wave -noupdate $binopt ${osd}skewd_oserdes_clkdiv
+eval add wave -noupdate $binopt ${osd}mem_refclk
 eval add wave -noupdate $binopt ${osd}os_rst
 eval add wave -noupdate $binopt ${osd}skewd_oserdes_clk_delayed
 eval add wave -noupdate $binopt ${osd}ddr_ck_out_q

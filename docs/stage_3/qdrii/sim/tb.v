@@ -89,8 +89,8 @@ module tb;
 		  .sys_clk		(sys_clk),
 		  .sys_rst		(sys_rst));
 
-   defparam qdr_tb.example_top.SIM_BYPASS_INIT_CAL = "FAST";
-   defparam qdr_tb.example_top.SIMULATION          = "TRUE";
+   //defparam qdr_tb.example_top.SIM_BYPASS_INIT_CAL = "FAST";
+   //defparam qdr_tb.example_top.SIMULATION          = "FALSE";
 
    cyqdr2_b4 
      cyqdr2_b4  (
