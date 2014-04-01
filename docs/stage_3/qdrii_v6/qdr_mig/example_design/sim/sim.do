@@ -96,7 +96,7 @@ vlog  ../rtl/*.v
 #$XILINX variable must be set
 vlog  $env(XILINX)/verilog/src/glbl.v
 vlog  ../sim/sim_tb_top*.v
-
+vlog  ../sim/cyqdr2_b4.v
 
 
 #Load the design. Use required libraries.#
