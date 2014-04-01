@@ -18,3 +18,4 @@
 -g Security:NONE
 #-m
 -g Persist:No
+-g configrate:9
