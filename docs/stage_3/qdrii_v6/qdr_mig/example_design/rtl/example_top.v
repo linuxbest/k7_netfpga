@@ -98,7 +98,7 @@ module example_top #
   parameter PHY_LATENCY        = 0,            //Expected Latency
   parameter SIM_CAL_OPTION     = "NONE",      // Skip various calibration steps
   parameter SIM_INIT_OPTION    = "NONE",      //Simulation only. "NONE", "SIM_MODE"
-  parameter PHASE_DETECT       = "ON",       //Enable Phase detector
+  parameter PHASE_DETECT       = "OFF",       //Enable Phase detector
   parameter IBUF_LPWR_MODE     = "OFF",       // Input buffer low power mode
   parameter IODELAY_HP_MODE    = "ON",        // IODELAY High Performance Mode
   parameter TCQ                = 100,

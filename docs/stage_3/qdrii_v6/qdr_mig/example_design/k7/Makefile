@@ -1,12 +1,14 @@
 T=example_top
 DEV=xc7k325t-ffg900-2
 
+export XIL_PAR_DESIGN_CHECK_VERBOSE=1
+
 all: ${T}.bit
 
 ${T}.lso:
 	touch $@
 
-${T}.ngc: xst_opt.txt ${T}.prj ${T}.lso icon_cg.ngc ila_cg.ngc vio_cg.ngc
+${T}.ngc: xst_opt.txt ${T}.prj ${T}.lso icon.ngc ila.ngc vio.ngc
 	xst -ifn xst_opt.txt -ofn ${T}_xst.syr -intstyle ise
 
 # translatee

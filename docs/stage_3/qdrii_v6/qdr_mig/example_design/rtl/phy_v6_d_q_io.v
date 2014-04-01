@@ -199,10 +199,10 @@ module phy_v6_d_q_io #
       
       // Q then passes through an IDELAY
      (* IODELAY_GROUP = IODELAY_GRP *) 
-     IODELAYE1 #(
-        .DELAY_SRC              ("I"),
+     IDELAYE2 #(
+        .DELAY_SRC              ("IDATAIN"),
         .HIGH_PERFORMANCE_MODE  (HIGH_PERFORMANCE_MODE),
-        .IDELAY_TYPE            ("VAR_LOADABLE"),
+        .IDELAY_TYPE            ("VAR_LOAD"),
         .REFCLK_FREQUENCY       (REFCLK_FREQ),
         .SIGNAL_PATTERN         ("DATA")
      ) u_iodelay_d (
@@ -215,10 +215,7 @@ module phy_v6_d_q_io #
         .DATAIN       (1'b0),
         .IDATAIN      (q_ibuf),
         .INC          (q_dly_inc_int),
-        .ODATAIN      (),
-        .RST          (q_dly_rst),
-        .CLKIN        (),
-        .T            (1'b1)
+        .LD           (q_dly_rst)
      );
      
      // Finally Q is deserialized in the ISERDES

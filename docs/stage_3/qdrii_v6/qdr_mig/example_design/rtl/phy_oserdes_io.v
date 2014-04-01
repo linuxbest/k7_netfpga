@@ -137,7 +137,7 @@ module phy_oserdes_io#(
 	  .TCE          (1'b0),         //Disable Tristate inputs
 	  .WC           (1'b0)          //Write Command to reset internal cntrs
 	);
-
+`if 0
   (* IODELAY_GROUP = IODELAY_GRP *) IODELAYE1 #(
     .DELAY_SRC             ("O"),                   //Place dealy on the Output    
     .HIGH_PERFORMANCE_MODE (HIGH_PERFORMANCE_MODE), //EN for higher res. > power
@@ -162,6 +162,9 @@ module phy_oserdes_io#(
     .CLKIN       (),
     .CINVCTRL    (1'b0)
   );
+`else
+ assign iodelay_d_out = oserdes_d_out;
+`endif
 
   generate 
     if (DIFF_OUT==0) begin

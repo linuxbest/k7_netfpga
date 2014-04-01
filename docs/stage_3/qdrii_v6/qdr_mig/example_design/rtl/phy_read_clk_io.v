@@ -208,11 +208,11 @@ module phy_read_clk_io #
   endgenerate
 
   // CQ then passes through an IDELAY
-  IODELAYE1 #(
+  IDELAYE2 #(
     .CINVCTRL_SEL          ("FALSE"),
-    .DELAY_SRC              ("I"),
+    .DELAY_SRC              ("IDATAIN"),
     .HIGH_PERFORMANCE_MODE  (HIGH_PERFORMANCE_MODE),
-    .IDELAY_TYPE            ("VAR_LOADABLE"),
+    .IDELAY_TYPE            ("VAR_LOAD"),
     .REFCLK_FREQUENCY       (REFCLK_FREQ),
     .SIGNAL_PATTERN         ("CLOCK")
   ) cq_idelay_inst (
@@ -225,10 +225,7 @@ module phy_read_clk_io #
     .DATAIN       (1'b0),
     .IDATAIN      (cq_ibuf),
     .INC          (cq_dly_inc_int),
-    .ODATAIN      (),
-    .RST          (cq_dly_rst),
-    .CLKIN        (),
-    .T            (1'b1)
+    .LD           (cq_dly_rst)
   );
   
   assign cqn_bufio   = ~cq_bufio;
