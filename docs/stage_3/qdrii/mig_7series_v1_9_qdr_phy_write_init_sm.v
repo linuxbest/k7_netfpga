@@ -374,7 +374,7 @@ reg [8:0] po_dec_counter;
       if (rst_wr_clk)
         mem_dll_off_n <=#TCQ 0;
       else
-        mem_dll_off_n <=#TCQ init_done;
+        mem_dll_off_n <=#TCQ 1'b1;
      end
 
   // Count CLK_STABLE cycles to determine that CQ/CQ# clocks are stable.  When

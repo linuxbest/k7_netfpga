@@ -28,7 +28,7 @@ eval add wave -noupdate -divider {"u_mig_7series_v1_9"}
 eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}rstdiv0
 eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}clk
 eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}mem_refclk
-eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}ddr_refclk
+#eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}ddr_refclk
 eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_infrastructure${ps}sync_pulse
 
 eval add wave -noupdate -divider {"ck p i"}
@@ -40,6 +40,17 @@ eval add wave -noupdate $binopt ${osd}phy_clk_fast
 eval add wave -noupdate $binopt ${osd}os_rst
 eval add wave -noupdate $binopt ${osd}skewd_oserdes_clk_delayed
 eval add wave -noupdate $binopt ${osd}ddr_ck_out_q
+
+
+eval add wave -noupdate -divider {"example top"}
+eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}clk
+eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}rst_clk
+
+eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}cmp_err
+eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}init_calib_complete
+
+#eval add wave -noupdate -divider {"phy top"}
+#eval add wave -noupdate $binopt /tb${ps}qdr_tb${ps}example_top${ps}u_mig_7series_v1_9${ps}u_qdr_phy_top${ps}
 
 
 # Wave window configuration information

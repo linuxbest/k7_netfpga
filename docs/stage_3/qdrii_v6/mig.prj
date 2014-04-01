@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project NoOfControllers="1" >
+    <ModuleName>qdr_mig</ModuleName>
+    <dci_inputs>1</dci_inputs>
+    <Debug_En>ON</Debug_En>
+    <TargetFPGA>xc6vlx240t-ff1156/-3</TargetFPGA>
+    <Version>3.92</Version>
+    <SystemClock>Single-Ended</SystemClock>
+    <PinSelectionFlag>FALSE</PinSelectionFlag>
+    <IODelayHighPerformanceMode>HIGH</IODelayHighPerformanceMode>
+    <InternalVref>0</InternalVref>
+    <Controller number="0" >
+        <MemoryDevice>QDRIIPLUS_SRAM/Components/CY7C1565V18-400BZXC</MemoryDevice>
+        <TimePeriod>2500</TimePeriod>
+        <DataWidth>36</DataWidth>
+        <CustomPart>FALSE</CustomPart>
+        <NewPartName></NewPartName>
+        <AddressWidth>19</AddressWidth>
+        <MasterBanks>35</MasterBanks>
+        <TimingParameters>
+            <Parameters tjit="200" tdh="280" tis="400" tds="280" tih="400" tac="200" />
+        </TimingParameters>
+        <DiscreteBankSelections>1</DiscreteBankSelections>
+        <CaptureClock>35</CaptureClock>
+        <UserMemoryAddressMap>ROW_BANK_COLUMN</UserMemoryAddressMap>
+        <FixedLatencyMode>0</FixedLatencyMode>
+        <PhyLatency>0</PhyLatency>
+        <BankSelection>
+            <Bank Data_Read="0" SysClk="0" Data_Write="1" name="26" Address="0" wasso="40" />
+            <Bank Data_Read="0" SysClk="1" Data_Write="0" name="34" Address="0" wasso="40" />
+            <Bank Data_Read="1" SysClk="0" Data_Write="0" name="35" Address="1" wasso="40" />
+            <Bank Data_Read="1" SysClk="0" Data_Write="0" name="36" Address="0" wasso="40" />
+        </BankSelection>
+        <PortInterface>NATIVE</PortInterface>
+    </Controller>
+</Project>
