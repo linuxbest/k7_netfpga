@@ -98,7 +98,7 @@ module example_top #
   parameter PHY_LATENCY        = 0,            //Expected Latency
   parameter SIM_CAL_OPTION     = "NONE",      // Skip various calibration steps
   parameter SIM_INIT_OPTION    = "NONE",      //Simulation only. "NONE", "SIM_MODE"
-  parameter PHASE_DETECT       = "OFF",       //Enable Phase detector
+  parameter PHASE_DETECT       = "ON",        //Enable Phase detector
   parameter IBUF_LPWR_MODE     = "OFF",       // Input buffer low power mode
   parameter IODELAY_HP_MODE    = "ON",        // IODELAY High Performance Mode
   parameter TCQ                = 100,
@@ -161,8 +161,10 @@ module example_top #
   wire                            iodelay_ctrl_rdy;
 
   wire                            clk;
+  wire                            clk270;
   wire                            rst_clk;
   wire                            clk_mem;
+  wire                            clk270_mem;
   wire                            clk_wr;
   wire                            mmcm_locked;
   wire                            user_wr_cmd0;
@@ -290,6 +292,8 @@ module example_top #
     .clk0        (clk_mem),
     .clkdiv0     (clk),
     .clk_wr      (clk_wr),
+    .clk270      (clk270_mem),
+    .clkdiv270   (clk270),
     .mmcm_locked (mmcm_locked)
   );
 
@@ -323,9 +327,11 @@ module example_top #
     .TCQ                (TCQ)
   ) u_user_top (
     .clk                    (clk),
+    .clk270                 (clk270),
     .rst_clk                (rst_clk),
     .sys_rst                (sys_rst),
     .clk_mem                (clk_mem),
+    .clk270_mem             (clk270_mem),
     .clk_wr                 (clk_wr),
     .mmcm_locked            (mmcm_locked),
     .iodelay_ctrl_rdy       (iodelay_ctrl_rdy),

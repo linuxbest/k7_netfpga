@@ -104,7 +104,7 @@ module sim_tb_top();
   localparam CLKOUT_DIVIDE         = 4;             // VCO output divisor for fast (memory) clocks
   localparam DIVCLK_DIVIDE         = 2;             // write PLL VCO divisor
   localparam TCQ                   = 100;            //Simulation Register Delay
-  localparam SIM_INIT_OPTION       = "SIM_MODE";    //Simulation only. "NONE", "SIM_MODE"
+  localparam SIM_INIT_OPTION       = "NONE";    //Simulation only. "NONE", "SIM_MODE"
 
   localparam BW_COMP = MEMORY_WIDTH/9;
 
@@ -330,6 +330,7 @@ module sim_tb_top();
   //***************************************************************************
   // Reporting the test case status
   //***************************************************************************
+/*
   initial
   begin : Logging
      fork
@@ -357,5 +358,6 @@ module sim_tb_top();
         end
      join
   end
+*/
   
 endmodule

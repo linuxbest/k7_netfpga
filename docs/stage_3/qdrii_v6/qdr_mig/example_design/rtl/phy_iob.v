@@ -91,9 +91,11 @@ module phy_iob #(
 (
   //System Signals
   input                           clk,            //main system half freq clk   
+  input                           clk270,         //main system half freq clk   
   input                           rst_clk,
   input                           rst_wr_clk,     //main write path reset 
   input                           clk_mem,        //full frequency clock
+  input                           clk270_mem,     //full frequency clock
   output wire [NUM_DEVICES-1:0]   clk_rd,         //half freq CQ clock
   input       [NUM_DEVICES-1:0]   rst_clk_rd,     //reset syncrhonized to clk_rd
 
@@ -418,10 +420,10 @@ module phy_iob #(
         .TCQ                  (TCQ)
       ) u_phy_d_q_io (
         //System Signals
-        .clk          (clk),
+        .clk          (clk270),
         .rst_wr_clk   (rst_wr_clk),        
         //Write Interface
-        .clk_mem      (clk_mem),
+        .clk_mem      (clk270_mem),
         .data_rise0   (iob_data_rise0[MEMORY_WIDTH*(nd_i+1)-1:
                                       MEMORY_WIDTH*nd_i]),
         .data_fall0   (iob_data_fall0[MEMORY_WIDTH*(nd_i+1)-1:

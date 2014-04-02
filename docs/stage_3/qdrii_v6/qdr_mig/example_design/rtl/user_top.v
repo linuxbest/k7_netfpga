@@ -101,9 +101,11 @@ module user_top #(
 (
   //System Signals
   input                                     clk,              //main system half freq clk
+  input                                     clk270,           //main system half freq clk
   output wire                               rst_clk,          //reset sync to clk  
   input                                     sys_rst,          //unsync system clk reset
   input                                     clk_mem,          //full frequency clock
+  input                                     clk270_mem,       //full frequency clock
  input                                      clk_wr,
   input                                     mmcm_locked,      //MMCM is locked
   input                                     iodelay_ctrl_rdy, //IODELAY CTRL is ready
@@ -244,9 +246,11 @@ module user_top #(
     .TCQ                (TCQ)
   ) u_qdr_phy_top (
     .clk                    (clk), 
+    .clk270                 (clk270), 
     .rst_clk                (rst_clk),
     .sys_rst                (sys_rst),          
     .clk_mem                (clk_mem),
+    .clk270_mem             (clk270_mem),
     .clk_wr                 (clk_wr),
     .mmcm_locked            (mmcm_locked),
     .iodelay_ctrl_rdy       (iodelay_ctrl_rdy),

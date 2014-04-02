@@ -215,8 +215,8 @@ assign iobuf_out = pd_source;
 
 // **************** instantiate PD IODELAYE1 ****************
 
-  IODELAYE1 #(
-    .DELAY_SRC              ("I"),
+  IDELAYE2 #(
+    .DELAY_SRC              ("IDATAIN"),
     .HIGH_PERFORMANCE_MODE  ("TRUE"),
     .IDELAY_TYPE            ("VARIABLE"),
     .IDELAY_VALUE           (IODELAY_PD_VAL),
@@ -232,10 +232,7 @@ assign iobuf_out = pd_source;
     .DATAIN       (1'b0),
     .IDATAIN      (pd_data_source),
     .INC          (pd_incdec_int),
-    .ODATAIN      (1'b0),
-    .RST          (rst_clk_rd),
-    .CLKIN        (1'b0),
-    .T            (1'b1)
+    .LD           (rst_clk_rd)
   );
 
 // **************** instantiate PD ISERDESE1 ****************

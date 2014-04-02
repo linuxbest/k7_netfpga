@@ -81,6 +81,8 @@ module qdr_rld_infrastructure #(
   output wire clk0,             //full frequency system clock
   output wire clkdiv0,          //half frequency system clock
   output wire clk_wr,
+  output wire clk270,           //full frequency system clock
+  output wire clkdiv270,        //half frequency system clock
   output wire mmcm_locked       //mmcm is locked
 );
 
@@ -90,6 +92,11 @@ module qdr_rld_infrastructure #(
   wire                       clkdiv0_bufg;
   wire                       clkdiv0_mmcm;
   wire                       clkfbout_mmcm;
+  
+  wire                       clk270_bufg;
+  wire                       clk270_mmcm;
+  wire                       clkdiv270_bufg;
+  wire                       clkdiv270_mmcm;
 
   //Clk period in nanosecond used for mmcm clock generation
   //divide clk_period by 2 to get the external memory frequency
@@ -112,6 +119,9 @@ module qdr_rld_infrastructure #(
   
   assign clk0       = clk0_bufg;
   assign clkdiv0    = clkdiv0_bufg;
+  
+  assign clk270     = clk270_bufg;
+  assign clkdiv270  = clkdiv270_bufg;
 
   assign  sys_rst_act_hi = RST_ACT_LOW ? ~sys_rst: sys_rst;
 
@@ -135,8 +145,8 @@ module qdr_rld_infrastructure #(
     .CLKOUT0_DIVIDE         (CLKOUT0_DIVIDE_F),
     .CLKOUT1_DIVIDE         (CLKOUT1_DIVIDE),
     .CLKOUT2_DIVIDE         (CLKOUT2_DIVIDE),
-    .CLKOUT3_DIVIDE         (CLKOUT3_DIVIDE),
-    .CLKOUT4_DIVIDE         (1),
+    .CLKOUT3_DIVIDE         (CLKOUT0_DIVIDE_F),
+    .CLKOUT4_DIVIDE         (CLKOUT1_DIVIDE),
     .CLKOUT5_DIVIDE         (1),
     .DIVCLK_DIVIDE          (DIVCLK_DIVIDE),
     .CLKFBOUT_MULT          (CLKFBOUT_MULT_F),
@@ -150,9 +160,9 @@ module qdr_rld_infrastructure #(
     .CLKOUT2_DUTY_CYCLE     (0.500),
     .CLKOUT2_PHASE          (0.000),
     .CLKOUT3_DUTY_CYCLE     (0.500),
-    .CLKOUT3_PHASE          (0.000),
+    .CLKOUT3_PHASE          (270.000),
     .CLKOUT4_DUTY_CYCLE     (0.500),
-    .CLKOUT4_PHASE          (0.000),
+    .CLKOUT4_PHASE          (270.000),
     .CLKOUT5_DUTY_CYCLE     (0.500),
     .CLKOUT5_PHASE          (0.000)
   ) u_mmcm_gen (
@@ -160,8 +170,8 @@ module qdr_rld_infrastructure #(
     .CLKOUT0           (clk0_mmcm),
     .CLKOUT1           (clkdiv0_mmcm),
     .CLKOUT2           (clk_wr),
-    .CLKOUT3           (),
-    .CLKOUT4           (),
+    .CLKOUT3           (clk270_mmcm),
+    .CLKOUT4           (clkdiv270_mmcm),
     .CLKOUT5           (),
     .DO                (),
     .DRDY              (),
@@ -189,6 +199,18 @@ module qdr_rld_infrastructure #(
     (
      .O (clkdiv0_bufg),
      .I (clkdiv0_mmcm)
+     );
+
+  BUFG u_bufg_clk270
+    (
+     .O (clk270_bufg),
+     .I (clk270_mmcm)
+     );
+
+  BUFG u_bufg_clkdiv270
+    (
+     .O (clkdiv270_bufg),
+     .I (clkdiv270_mmcm)
      );
 
 endmodule

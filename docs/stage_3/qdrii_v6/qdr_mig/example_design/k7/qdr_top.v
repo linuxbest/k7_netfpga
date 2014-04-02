@@ -85,10 +85,11 @@ module qdr_top (/*AUTOARG*/
    wire			CLK_OUT2;		// From clk_qdr of clk_qdr.v
    wire			LOCKED;			// From clk_qdr of clk_qdr.v
    wire			RESET;			// From example_inf of example_inf.v
-   wire			clk_ref;		// From example_inf of example_inf.v
-   wire			sys_clk;		// From example_inf of example_inf.v
    wire			sys_rst;		// From example_inf of example_inf.v
    // End of automatics
+   
+   (* KEEP = "TRUE" *) wire			clk_ref;		// From example_inf of example_inf.v
+   (* KEEP = "TRUE" *) wire			sys_clk;		// From example_inf of example_inf.v
    
    example_top
      example_top (/*AUTOINST*/

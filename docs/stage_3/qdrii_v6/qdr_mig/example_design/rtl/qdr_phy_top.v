@@ -101,9 +101,11 @@ module qdr_phy_top #
 (
   //System Signals
   input                           clk,              //main system half freq clk
+  input                           clk270,           //main system half freq clk
   output wire                     rst_clk,          //reset sync to clk  
   input                           sys_rst,         //main write path reset 
   input                           clk_mem,          //full frequency clock
+  input                           clk270_mem,       //full frequency clock
  input                            clk_wr,
   input                           mmcm_locked,      //MMCM is locked
   input                           iodelay_ctrl_rdy, //ready from IODELAY CTLR
@@ -403,9 +405,11 @@ module qdr_phy_top #
     .TCQ              (TCQ)
   ) u_phy_iob (
     .clk             (clk),         
+    .clk270          (clk270),         
     .rst_clk         (rst_clk),   
     .rst_wr_clk      (rst_wr_clk), 
     .clk_mem         (clk_mem),
+    .clk270_mem      (clk270_mem),
     .clk_rd          (clk_rd),
     .rst_clk_rd      (rst_clk_rd),
     .int_rd_cmd_n    (int_rd_cmd_n),

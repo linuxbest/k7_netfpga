@@ -23,17 +23,24 @@
 ## Data Mask: 1
 ##################################################################################################
 
-NET "sys_clk_i" TNM_NET = TNM_sys_clk;
-TIMESPEC "TS_sys_clk" = PERIOD "TNM_sys_clk" 10 ns;
+NET "sys_clk" TNM_NET = TNM_in_clk;
+TIMESPEC "TS_in_clk" = PERIOD "TNM_in_clk" 10 ns;
+
+NET "sys_clk" TNM_NET = TNM_sys_clk;
+TIMESPEC "TS_sys_clk" = PERIOD "TNM_sys_clk" 2.5 ns;
             
-#NET "clk_ref_i" TNM_NET = TNM_clk_ref;
-#TIMESPEC "TS_clk_ref" = PERIOD "TNM_clk_ref" 5 ns ;
+NET "clk_ref" TNM_NET = TNM_clk_ref;
+TIMESPEC "TS_clk_ref" = PERIOD "TNM_clk_ref" 5 ns ;
             
 NET "qdriip_cq_p[*]" TNM_NET = TNM_capt_clk_p;
 TIMESPEC "TS_capt_clk_p" = PERIOD "TNM_capt_clk_p" 2 ns;
 NET "qdriip_cq_n[*]" TNM_NET = TNM_capt_clk_n;
 TIMESPEC "TS_capt_clk_n" = PERIOD "TNM_capt_clk_n" 2 ns;
-      
+
+#constraint QDR_CQ_P/N clocks
+NET "*/u_user_top/*/clk_rd*" TNM_NET = TNM_clk_rd;
+TIMESPEC "TS_clk_rd" = PERIOD "TNM_clk_rd" 5 ns HIGH 50 %;
+
 # Note: the following CLOCK_DEDICATED_ROUTE constraint will cause a warning in place similar
 # to the following:
 #   WARNING:Place:1402 - A clock IOB / PLL clock component pair have been found that are not
