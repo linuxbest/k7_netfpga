@@ -55,6 +55,7 @@ module qdr_top (/*AUTOARG*/
    parameter DATA_WIDTH  = 36;
    parameter BW_WIDTH    = 4;
    parameter ADDR_WIDTH  = 18;
+   parameter QDRCLK_FREQ = 500;
 
    /*AUTOINPUT*/
    // Beginning of automatic inputs (from unused autoinst inputs)
@@ -113,8 +114,9 @@ module qdr_top (/*AUTOARG*/
 		  .sys_rst		(sys_rst));
 
    defparam example_top.INPUT_CLK_TYPE = "NO_BUFFER";
+   defparam example_top.CLK_PERIOD     = DQRCLK_FREQ == 400 ? 5000 : 4000;
 
-   clk_qdr
+   clk_qdr  #(.DQRCLK_FREQ              (DQRCLK_FREQ))
      clk_qdr (/*AUTOINST*/
 	      // Outputs
 	      .CLK_OUT1			(CLK_OUT1),
