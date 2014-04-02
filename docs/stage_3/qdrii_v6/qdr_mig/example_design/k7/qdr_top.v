@@ -111,7 +111,7 @@ module qdr_top (/*AUTOARG*/
 		  .qdriip_q		(qdriip_q[DATA_WIDTH-1:0]),
 		  .sys_rst		(sys_rst));
 
-   defparam example_top.INPUT_CLK_TYPE = "NO_BUFFEER";
+   defparam example_top.INPUT_CLK_TYPE = "NO_BUFFER";
 
    clk_qdr
      clk_qdr (/*AUTOINST*/
