@@ -114,9 +114,9 @@ module qdr_top (/*AUTOARG*/
 		  .sys_rst		(sys_rst));
 
    defparam example_top.INPUT_CLK_TYPE = "NO_BUFFER";
-   defparam example_top.CLK_PERIOD     = DQRCLK_FREQ == 400 ? 5000 : 4000;
+   defparam example_top.CLK_PERIOD     = QDRCLK_FREQ == 400 ? 5000 : 4000;
 
-   clk_qdr  #(.DQRCLK_FREQ              (DQRCLK_FREQ))
+   clk_qdr  #(.QDRCLK_FREQ              (QDRCLK_FREQ))
      clk_qdr (/*AUTOINST*/
 	      // Outputs
 	      .CLK_OUT1			(CLK_OUT1),
