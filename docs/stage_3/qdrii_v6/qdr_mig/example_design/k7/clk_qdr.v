@@ -119,7 +119,7 @@ module clk_qdr #
     .CLKFBOUT_MULT_F      (10.000),
     .CLKFBOUT_PHASE       (0.000),
     .CLKFBOUT_USE_FINE_PS ("FALSE"),
-    .CLKOUT0_DIVIDE_F     (DQRCLK_FREQ == 400 ? 2.500 : 2.000),
+    .CLKOUT0_DIVIDE_F     (QDRCLK_FREQ == 400 ? 2.500 : 2.000),
     .CLKOUT0_PHASE        (0.000),
     .CLKOUT0_DUTY_CYCLE   (0.500),
     .CLKOUT0_USE_FINE_PS  ("FALSE"),
