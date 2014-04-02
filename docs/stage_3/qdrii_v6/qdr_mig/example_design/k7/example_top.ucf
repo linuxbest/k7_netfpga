@@ -153,8 +153,8 @@ NET   "qdriip_k_n[0]"                          LOC = "A27"     |   IOSTANDARD = 
 
 NET   "sys_clk_i"                                LOC = "AG10"    |   IOSTANDARD = HSTL_I;
 NET   "sys_rst_i"                                LOC = "AK10"    |   IOSTANDARD = HSTL_I | PULLUP;
-#NET   "tg_compare_error"                       LOC = "AF12"    |   IOSTANDARD = HSTL_I;
-#NET   "init_calib_complete"                    LOC = "AG12"    |   IOSTANDARD = HSTL_I;
+NET   "compare_error"                            LOC = "AF12"    |   IOSTANDARD = HSTL_I;
+NET   "cal_done"                                 LOC = "AG12"    |   IOSTANDARD = HSTL_I;
 
 
 #INST "*/qdr_rld_phy_4lanes_2.u_qdr_rld_phy_4lanes/qdr_rld_byte_lane_D.qdr_rld_byte_lane_D/PHASER_OUT_inst.phaser_out" LOC=PHASER_OUT_PHY_X0Y19;

@@ -47,8 +47,7 @@ module example_inf (/*AUTOARG*/
    // Outputs
    CLK_IN1, RESET, sys_clk, sys_rst, clk_ref,
    // Inputs
-   CLK_OUT1, CLK_OUT2, LOCKED, sys_clk_i, sys_rst_i, cal_done,
-   compare_error
+   CLK_OUT1, CLK_OUT2, LOCKED, sys_clk_i, sys_rst_i
    );
    input CLK_OUT1;
    input CLK_OUT2;
@@ -64,15 +63,12 @@ module example_inf (/*AUTOARG*/
    output sys_rst;
    output clk_ref;
 
-   input  cal_done;
-   input  compare_error;
-   
    assign CLK_IN1 = sys_clk_i;
    assign RESET   = ~sys_rst_i;
    
    assign sys_clk = CLK_OUT1;
    assign clk_ref = CLK_OUT2;
-   assign sys_rst = ~LOCKED;
+   assign sys_rst = LOCKED;
    
 endmodule
 // 

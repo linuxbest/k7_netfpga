@@ -77,6 +77,7 @@ vlib work
 #Compile all modules#
 vlog  ../rtl/qdr_rld_chipscope.v
 vlog  ../rtl/*.v
+vlog  ../k7/*.v
 
 #Compile files in sim folder#
 

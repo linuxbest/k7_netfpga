@@ -46,7 +46,7 @@
 module qdr_top (/*AUTOARG*/
    // Outputs
    qdriip_w_n, qdriip_sa, qdriip_r_n, qdriip_k_p, qdriip_k_n,
-   qdriip_dll_off_n, qdriip_d, qdriip_bw_n,
+   qdriip_dll_off_n, qdriip_d, qdriip_bw_n, compare_error, cal_done,
    // Inputs
    sys_rst_i, sys_clk_i, qdriip_q, qdriip_cq_p, qdriip_cq_n
    );
@@ -66,6 +66,8 @@ module qdr_top (/*AUTOARG*/
    // End of automatics
    /*AUTOOUTPUT*/
    // Beginning of automatic outputs (from unused autoinst outputs)
+   output		cal_done;		// From example_top of example_top.v
+   output		compare_error;		// From example_top of example_top.v
    output [BW_WIDTH-1:0] qdriip_bw_n;		// From example_top of example_top.v
    output [DATA_WIDTH-1:0] qdriip_d;		// From example_top of example_top.v
    output		qdriip_dll_off_n;	// From example_top of example_top.v
@@ -83,9 +85,7 @@ module qdr_top (/*AUTOARG*/
    wire			CLK_OUT2;		// From clk_qdr of clk_qdr.v
    wire			LOCKED;			// From clk_qdr of clk_qdr.v
    wire			RESET;			// From example_inf of example_inf.v
-   wire			cal_done;		// From example_top of example_top.v
    wire			clk_ref;		// From example_inf of example_inf.v
-   wire			compare_error;		// From example_top of example_top.v
    wire			sys_clk;		// From example_inf of example_inf.v
    wire			sys_rst;		// From example_inf of example_inf.v
    // End of automatics
@@ -136,9 +136,7 @@ module qdr_top (/*AUTOARG*/
 		  .CLK_OUT2		(CLK_OUT2),
 		  .LOCKED		(LOCKED),
 		  .sys_clk_i		(sys_clk_i),
-		  .sys_rst_i		(sys_rst_i),
-		  .cal_done		(cal_done),
-		  .compare_error	(compare_error));
+		  .sys_rst_i		(sys_rst_i));
    
 endmodule
 // 
