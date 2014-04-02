@@ -112,6 +112,8 @@ module clk_ibuf #
            .I  (sys_clk),
            .O  (sys_clk_ibufg)
            );
+    end else if (INPUT_CLK_TYPE == "NO_BUFFER") begin: no_input_clk
+      assign sys_clk_ibufg = sys_clk;
    end
   endgenerate
 

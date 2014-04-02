@@ -4,6 +4,6 @@ run
 -ifn example_top.prj
 -ofn example_top 
 -p xc7k325t-2-ffg900
--top example_top
+-top qdr_top
 -lso example_top.lso
 quit

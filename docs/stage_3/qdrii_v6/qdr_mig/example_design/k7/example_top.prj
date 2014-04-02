@@ -31,3 +31,7 @@ verilog  work  ../rtl/tb_data_gen.v
 verilog  work  ../rtl/tb_top.v
 verilog  work  ../rtl/tb_wr_rd_sm.v
 verilog  work  ../rtl/user_top.v
+
+verilog  work  clk_qdr.v
+verilog  work  qdr_top.v
+verilog  work  example_inf.v

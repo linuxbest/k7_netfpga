@@ -118,7 +118,8 @@ module iodelay_ctrl #(
        .I (clk_ref),
        .O (clk_ref_ibufg)
        );
-
+   end else if(INPUT_CLK_TYPE == "NO_BUFFER") begin : NO_BUFFER_ENDED_CLKS_INST
+     assign clk_ref_ibufg = clk_ref;
     end
   endgenerate
 
