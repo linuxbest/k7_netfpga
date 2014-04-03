@@ -100,8 +100,8 @@ NET Linear_Flash_we_n        LOC = "M25"  |  IOSTANDARD = "LVCMOS25" | PULLUP;
 NET Linear_Flash_ce_n        LOC = "U19"  |  IOSTANDARD = "LVCMOS25" | PULLUP;
 
 # RS 232
-NET RS232_Uart_1_sin  LOC = "AF26"  |  IOSTANDARD = "LVCMOS25";
-NET RS232_Uart_1_sout LOC = "AF27"  |  IOSTANDARD = "LVCMOS25";
+NET RS232_Uart_1_sin  LOC = "AF27"  |  IOSTANDARD = "LVCMOS25";
+NET RS232_Uart_1_sout LOC = "AF26"  |  IOSTANDARD = "LVCMOS25";
 
 # additional constraints
 #
