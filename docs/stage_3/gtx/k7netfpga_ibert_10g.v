@@ -47,7 +47,7 @@ module k7netfpga_ibert_10g (/*AUTOARG*/
    // Outputs
    X0Y15_TX_P_OPAD, X0Y15_TX_N_OPAD, X0Y14_TX_P_OPAD, X0Y14_TX_N_OPAD,
    X0Y13_TX_P_OPAD, X0Y13_TX_N_OPAD, X0Y12_TX_P_OPAD, X0Y12_TX_N_OPAD,
-   TX_DISABLE,
+   TX_DISABLE, RS,
    // Inputs
    X0Y15_RX_P_IPAD, X0Y15_RX_N_IPAD, X0Y14_RX_P_IPAD, X0Y14_RX_N_IPAD,
    X0Y13_RX_P_IPAD, X0Y13_RX_N_IPAD, X0Y12_RX_P_IPAD, X0Y12_RX_N_IPAD,
@@ -83,6 +83,9 @@ module k7netfpga_ibert_10g (/*AUTOARG*/
 
    output [3:0] 	TX_DISABLE;
    assign TX_DISABLE = 4'h0;
+
+   output [3:0]         RS;
+   assign RS = 4'hf;
    
    example_chipscope_ibert10g
      example_chipscope_ibert10g (/*AUTOINST*/
