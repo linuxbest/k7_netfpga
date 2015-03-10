@@ -27,9 +27,9 @@ ${T}.twr: ${T}.ncd
 ${T}.bit: ${T}.twr 
 	bitgen -w -intstyle ise ${T}.ncd
 
-icon_cg.ngc:
+icon.ngc:
 	coregen -p coregen.cgp -b icon_cg.xco
-ila_cg.ngc:
+ila.ngc:
 	coregen -p coregen.cgp -b ila_cg.xco
-vio_cg.ngc:
+vio.ngc:
 	coregen -p coregen.cgp -b vio_cg.xco

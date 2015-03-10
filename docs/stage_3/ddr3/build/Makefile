@@ -48,26 +48,26 @@ ddr3_tb.bit: ${CGS} ddr3_tb.ncd ddr3_tb.twr
 mig_7series_v1_9/example_design/par/example_top.bit: mig_7series_v1_9_readme.txt
 	cd mig_7series_v1_9/example_design/par/ && ./ise_flow.sh
 
-ddr_icon.ngc:
+ddr_icon.ngc: mig_7series_v1_9_readme.txt
 	cp mig_7series_v1_9/example_design/par/ddr_icon_cg.xco .
 	coregen -p coregen.cgp -b ddr_icon_cg.xco
 
-ddr_ila_basic.ngc:
+ddr_ila_basic.ngc: mig_7series_v1_9_readme.txt
 	cp mig_7series_v1_9/example_design/par/ddr_ila_basic_cg.xco .
 	coregen -p coregen.cgp -b ddr_ila_basic_cg.xco
 
-ddr_ila_wrpath.ngc:
+ddr_ila_wrpath.ngc: mig_7series_v1_9_readme.txt
 	cp mig_7series_v1_9/example_design/par/ddr_ila_wrpath_cg.xco .
 	coregen -p coregen.cgp -b ddr_ila_wrpath_cg.xco
 
-ddr_ila_rdpath.ngc:
+ddr_ila_rdpath.ngc: mig_7series_v1_9_readme.txt
 	cp mig_7series_v1_9/example_design/par/ddr_ila_rdpath_cg.xco .
 	coregen -p coregen.cgp -b ddr_ila_rdpath_cg.xco
 
-ddr_vio_sync_async_out72.ngc:
+ddr_vio_sync_async_out72.ngc: mig_7series_v1_9_readme.txt
 	cp mig_7series_v1_9/example_design/par/ddr_vio_sync_async_out72_cg.xco .
 	coregen -p coregen.cgp -b ddr_vio_sync_async_out72_cg.xco
 
-ddr_vio_async_in_sync_out.ngc:
+ddr_vio_async_in_sync_out.ngc: mig_7series_v1_9_readme.txt
 	cp mig_7series_v1_9/example_design/par/ddr_vio_async_in_sync_out_cg.xco .
 	coregen -p coregen.cgp -b ddr_vio_async_in_sync_out_cg.xco

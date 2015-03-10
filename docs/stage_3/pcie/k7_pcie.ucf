@@ -98,7 +98,7 @@ CONFIG PART = xc7k325t-ffg900-3;
 #
 
 NET "sys_rst_n" TIG;
-NET "sys_rst_n" LOC = "AK10" | IOSTANDARD = LVCMOS18 | PULLUP | NODELAY ;
+NET "sys_rst_n" LOC = "Y20" | IOSTANDARD = LVCMOS18 | PULLUP | NODELAY ;
 
 #
 # SYS clock 100 MHz (input) signal. The sys_clk_p and sys_clk_n
